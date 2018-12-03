@@ -5,7 +5,8 @@ import java.util.Date;
 import org.springframework.web.multipart.MultipartFile;
 
 public class Product {
-	String pid;
+	int pid;
+	String pname;
 	int p_code;
 	int unit_price;
 	Date regdate;
@@ -14,19 +15,35 @@ public class Product {
 	MultipartFile mf;
 	
 	public Product() {}
-
-	public Product(String pid, int p_code, int unit_price, int inventory, String p_imgname, MultipartFile mf) {
-		this.pid = pid;
+	
+	
+	public Product(String pname, int p_code, int unit_price, int inventory, String p_imgname) {
+		this.pname = pname;
 		this.p_code = p_code;
 		this.unit_price = unit_price;
 		this.inventory = inventory;
 		this.p_imgname = p_imgname;
-		this.mf = mf;
 	}
 
-	public Product(String pid, int p_code, int unit_price, Date regdate, int inventory, String p_imgname,
+
+
+	
+
+
+	public Product(int pid, String pname, int p_code, int unit_price, int inventory, String p_imgname) {
+		this.pid = pid;
+		this.pname = pname;
+		this.p_code = p_code;
+		this.unit_price = unit_price;
+		this.inventory = inventory;
+		this.p_imgname = p_imgname;
+	}
+
+
+	public Product(int pid, String pname, int p_code, int unit_price, Date regdate, int inventory, String p_imgname,
 			MultipartFile mf) {
 		this.pid = pid;
+		this.pname = pname;
 		this.p_code = p_code;
 		this.unit_price = unit_price;
 		this.regdate = regdate;
@@ -35,12 +52,22 @@ public class Product {
 		this.mf = mf;
 	}
 
-	public String getPid() {
+
+
+	public int getPid() {
 		return pid;
 	}
 
-	public void setPid(String pid) {
+	public void setPid(int pid) {
 		this.pid = pid;
+	}
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
 	}
 
 	public int getP_code() {
@@ -58,7 +85,7 @@ public class Product {
 	public void setUnit_price(int unit_price) {
 		this.unit_price = unit_price;
 	}
-	
+
 	public Date getRegdate() {
 		return regdate;
 	}
@@ -90,13 +117,11 @@ public class Product {
 	public void setMf(MultipartFile mf) {
 		this.mf = mf;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Product [pid=" + pid + ", p_code=" + p_code + ", unit_price=" + unit_price + ", regdate=" + regdate
-				+ ", inventory=" + inventory + ", p_imgname=" + p_imgname + ", mf=" + mf + "]";
+		return "Product [pid=" + pid + ", pname=" + pname + ", p_code=" + p_code + ", unit_price=" + unit_price
+				+ ", regdate=" + regdate + ", inventory=" + inventory + ", p_imgname=" + p_imgname + ", mf=" + mf + "]";
 	}
-	
-	
 	
 }

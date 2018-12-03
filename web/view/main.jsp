@@ -116,7 +116,7 @@ th,td{
 			<li><a href="custregister.mc">CUST ADD</a></li>
 			<li><a href="custlist.mc">CUST LIST</a></li>
 			<li><a href="padd.alc">PRODUCT ADD</a></li>
-			<li><a href="plist.mc">PRODUCT LIST</a></li>
+			<li><a href="plist.alc">PRODUCT LIST</a></li>
 		</ul>
 	</nav>
 </header>

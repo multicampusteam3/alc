@@ -11,10 +11,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM PRODUCT
 	</select>
 	<insert id="insert" parameterType="product">
-		INSERT INTO PRODUCT VALUES (#{pid},#{p_code},#{unit_price},sysdate,#{inventory},#{p_imgname})
+		INSERT INTO PRODUCT VALUES (PRO_SEQ.NEXTVAL,#{pname},#{p_code},#{unit_price},sysdate,#{inventory},#{p_imgname})
 	</insert>
 	<update id="update" parameterType="product">
-		UPDATE PRODUCT SET INVENTORY=#{inventory},UNIT_PRICE=#{unit_price},P_IMGNAME=#{p_imgname} WHERE PID=#{pid}
+		UPDATE PRODUCT SET PNAME=#{pname},INVENTORY=#{inventory},UNIT_PRICE=#{unit_price},P_IMGNAME=#{p_imgname} WHERE PID=#{pid}
 	</update>
 	<delete id="delete" parameterType="String">
 		DELETE FROM PRODUCT WHERE PID=#{obj}
