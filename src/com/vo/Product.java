@@ -5,77 +5,84 @@ import java.util.Date;
 import org.springframework.web.multipart.MultipartFile;
 
 public class Product {
-	int id;
-	String name;
-	int price;
+	String pid;
+	int p_code;
+	int unit_price;
 	Date regdate;
-	String imgname;
+	int inventory;
+	String p_imgname;
 	MultipartFile mf;
 	
 	public Product() {}
-	
-	public Product(String name, int price, String imgname) {
-		this.name = name;
-		this.price = price;
-		this.imgname = imgname;
-	}
-	
-	
-	public Product(int id, String name, int price, String imgname) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.imgname = imgname;
-	}
 
-	public Product(int id, String name, int price, Date regdate, String imgname) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.regdate = regdate;
-		this.imgname = imgname;
-	}
-	
-	public Product(int id, String name, int price, Date regdate, String imgname, MultipartFile mf) {
-		this.id = id;
-		this.name = name;
-		this.price = price;
-		this.regdate = regdate;
-		this.imgname = imgname;
+	public Product(String pid, int p_code, int unit_price, int inventory, String p_imgname, MultipartFile mf) {
+		this.pid = pid;
+		this.p_code = p_code;
+		this.unit_price = unit_price;
+		this.inventory = inventory;
+		this.p_imgname = p_imgname;
 		this.mf = mf;
 	}
 
-	public int getId() {
-		return id;
+	public Product(String pid, int p_code, int unit_price, Date regdate, int inventory, String p_imgname,
+			MultipartFile mf) {
+		this.pid = pid;
+		this.p_code = p_code;
+		this.unit_price = unit_price;
+		this.regdate = regdate;
+		this.inventory = inventory;
+		this.p_imgname = p_imgname;
+		this.mf = mf;
 	}
-	public void setId(int id) {
-		this.id = id;
+
+	public String getPid() {
+		return pid;
 	}
-	public String getName() {
-		return name;
+
+	public void setPid(String pid) {
+		this.pid = pid;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public int getP_code() {
+		return p_code;
 	}
-	public int getPrice() {
-		return price;
+
+	public void setP_code(int p_code) {
+		this.p_code = p_code;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+
+	public int getUnit_price() {
+		return unit_price;
 	}
+
+	public void setUnit_price(int unit_price) {
+		this.unit_price = unit_price;
+	}
+	
 	public Date getRegdate() {
 		return regdate;
 	}
+
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public String getImgname() {
-		return imgname;
+
+	public int getInventory() {
+		return inventory;
 	}
-	public void setImgname(String imgname) {
-		this.imgname = imgname;
+
+	public void setInventory(int inventory) {
+		this.inventory = inventory;
 	}
-	
+
+	public String getP_imgname() {
+		return p_imgname;
+	}
+
+	public void setP_imgname(String p_imgname) {
+		this.p_imgname = p_imgname;
+	}
+
 	public MultipartFile getMf() {
 		return mf;
 	}
@@ -86,9 +93,10 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", regdate=" + regdate + ", imgname="
-				+ imgname + "]";
+		return "Product [pid=" + pid + ", p_code=" + p_code + ", unit_price=" + unit_price + ", regdate=" + regdate
+				+ ", inventory=" + inventory + ", p_imgname=" + p_imgname + ", mf=" + mf + "]";
 	}
+	
 	
 	
 }
