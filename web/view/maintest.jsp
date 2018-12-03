@@ -93,16 +93,16 @@ th,td{
 <header>
 	<nav id="top_nav">
 	<c:choose>
-		<c:when test="${login_cust == null }">
+		<c:when test="${login_users == null }">
 			<ul>
-				<li><a href="login.mc">LOGIN</a></li>
-				<li><a href="register.mc">REGISTER</a></li>
+				<li><a href="login.alc">LOGIN</a></li>
+				<li><a href="register.alc">REGISTER</a></li>
 				<li><a href="chart.mc">ABOUT US</a></li>
 			</ul>
 		</c:when>
 		<c:otherwise>
 			<ul>
-				<li>${login_cust.id }, welcome!</li>
+				<li>${login_user.user_id }, welcome!</li>
 				<li><a href="logout.mc">LOGOUT</a></li>
 				<li><a href="">ABOUT US</a></li>
 			</ul>

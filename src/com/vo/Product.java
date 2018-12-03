@@ -25,11 +25,6 @@ public class Product {
 		this.p_imgname = p_imgname;
 	}
 
-
-
-	
-
-
 	public Product(int pid, String pname, int p_code, int unit_price, int inventory, String p_imgname) {
 		this.pid = pid;
 		this.pname = pname;
