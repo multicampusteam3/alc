@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ProductMapper">
+	
+	<select id="select" parameterType="String" resultType="product">
+		SELECT * FROM USERS WHERE USER_ID=#{user_id}
+	</select>
+	<select id="selectall" resultType="Users">
+		SELECT * FROM USERS
+	</select>
+	<insert id="insert" parameterType="Users">
+		INSERT INTO USERS VALUES (#{id},#{pw},#{name},#{address},sysdate)
+	</insert>
+	<update id="update" parameterType="Users">
+		UPDATE USERS SET PW=#{pw},NAME=#{name},ADDRESS=#{address} WHERE USER_ID=#{user_id}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM USERS WHERE USER_ID=#{user_id}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
