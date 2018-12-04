@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.mapper.ProductMapper">
+<mapper namespace="com.mapper.UsersMapper">
 	
-	<select id="select" parameterType="String" resultType="product">
+	<select id="select" parameterType="String" resultType="Users">
 		SELECT * FROM USERS WHERE USER_ID=#{user_id}
 	</select>
 	<select id="selectall" resultType="Users">

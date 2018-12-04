@@ -16,9 +16,9 @@ import com.vo.Product;
 
 @Controller
 public class ProductController {
-	
+	int k = 0;
 	@Resource(name = "pbiz")
-	Biz<String, Product> biz;
+	Biz biz;
 
 	@RequestMapping("padd.alc")
 	public ModelAndView padd() {
@@ -52,7 +52,7 @@ public class ProductController {
 		
 		return mav;
 	}
-	@RequestMapping("plist.alc")
+	@RequestMapping("main.alc")
 	public ModelAndView plist() {
 		ModelAndView mav = new ModelAndView();
 		ArrayList<Product> list = null;
@@ -69,17 +69,43 @@ public class ProductController {
 		return mav;
 	}
 	
+	@RequestMapping("shop.alc")
+	public ModelAndView shop(HttpServletRequest req) {
+		ModelAndView mav = new ModelAndView();
+		ArrayList<Product> list = null;
+		mav.setViewName("shop");
+		String sec = (String) req.getParameter("sec");
+		System.out.println(sec);
+		
+		if(sec.equals("bg_soju")) {
+			k = 20;
+		}else if(sec == "bg_beer") {
+			k = 10;
+		}
+		try {
+			
+			list = biz.getsec(k);
+			System.out.println(k +" "+ list);
+			mav.addObject("plist",list);
+			mav.addObject("sec", sec);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
 	@RequestMapping("/pdetail.alc")
 	public ModelAndView pdetail(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		String pid = request.getParameter("pid");
-		mav.setViewName("main");
+		int pid = Integer.parseInt(request.getParameter("pid"));
+		mav.setViewName("shop");
 		try {
-			Product product = biz.get(pid);
+			Product product = (Product) biz.get(pid);
 			System.out.println(product);
-			mav.addObject("center", "product/detail");
+			mav.addObject("center", "single");
 			mav.addObject("prd", product);
 		} catch (Exception e) {
+			System.out.println("½ÇÆÐ");
 			e.printStackTrace();
 		}
 		return mav;
@@ -105,7 +131,7 @@ public class ProductController {
 		String pid = request.getParameter("pid");
 		mav.setViewName("main");
 		try {
-			Product product = biz.get(pid);
+			Product product = (Product) biz.get(pid);
 			mav.addObject("center", "product/update");
 			mav.addObject("prd", product);
 		} catch (Exception e) {

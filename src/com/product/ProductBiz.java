@@ -11,10 +11,10 @@ import com.frame.Dao;
 import com.vo.Product;
 
 @Service("pbiz")
-public class ProductBiz implements Biz<String, Product> {
+public class ProductBiz implements Biz<Integer, Product> {
 	
 	@Resource(name="pdao")
-	Dao dao;
+	Dao<Integer, Product> dao;
 	
 	
 	@Override
@@ -24,7 +24,7 @@ public class ProductBiz implements Biz<String, Product> {
 	}
 
 	@Override
-	public void remove(String k) throws Exception {
+	public void remove(Integer k) throws Exception {
 		dao.delete(k);
 	}
 
@@ -34,13 +34,17 @@ public class ProductBiz implements Biz<String, Product> {
 	}
 
 	@Override
-	public Product get(String k) throws Exception {
+	public Product get(Integer k) throws Exception {
 		return (Product) dao.select(k);
 	}
 
 	@Override
 	public ArrayList<Product> get() throws Exception {
 		return dao.select();
+	}
+	
+	public ArrayList<Product> getsec(Integer k) throws Exception {
+		return dao.selectsec(k);
 	}
 
 }

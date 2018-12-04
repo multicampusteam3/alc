@@ -7,6 +7,7 @@ public interface Dao<K,V> {
 	public void delete(K k);
 	public void update(V v);
 	public V select(K k);
+	public ArrayList<V> selectsec(K k);
 	public ArrayList<V> select();
 	
 }

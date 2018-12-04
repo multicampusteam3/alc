@@ -16,47 +16,51 @@ public class MainController {
 	@Resource(name="ubiz")
 	Biz<String,Users> biz;
 	
-	@RequestMapping("/main.alc")
-	public String main() {
-		return "maintest";
-	}
+//	@RequestMapping("/main.alc")
+//	public String main() {
+//		return "main";
+//	}
 	
-	@RequestMapping("/login.alc")
-	public ModelAndView login() {
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("main");
-		mav.addObject("center", "login");
-		return mav;
-	}
+	
 	@RequestMapping("/logout.alc")
 	public String logout(HttpSession session) {
 		if(session != null) {
 			session.invalidate();
 		}
-		return "main";
+		return "redirect:main.alc";
 	}
-	@RequestMapping("/loginimpl.alc")
+	@RequestMapping("/login.alc")
 	public ModelAndView loginimpl(@RequestParam(value="id",required=true) String id, 
 								  @RequestParam(value="pw",required=true) String pwd, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		Users dbusers= null;
-		mav.setViewName("main");
+		mav.setViewName("redirect:main.alc");
 		try {
 			dbusers = biz.get(id);
 			if(dbusers.getPw().equals(pwd)) {
-				session.setAttribute("login_cust", dbusers);
-				mav.addObject("center", "loginok");
+				session.setAttribute("login_user", dbusers);
 			}else {
-				mav.addObject("center", "loginfail");
 			}
 		} catch (Exception e) {
-			mav.addObject("center", "loginfail");
 			e.printStackTrace();
 		}
 		
 		return mav;
 	}
-
+	@RequestMapping("/register.alc")
+	public ModelAndView registerimpl(Users user, HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("main");
+		try {
+			biz.register(user);
+			session.setAttribute("login_user", user);
+			mav.addObject("center", "registerok");
+		} catch (Exception e) {
+			mav.addObject("center", "registerfail");
+			e.printStackTrace();
+		}
+		return mav;
+	}
 
 	
 }

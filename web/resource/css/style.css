@@ -76,6 +76,14 @@ header {
     padding: 2em 2em 0 2em;
 }
 
+header.bg_soju{
+    background: #4a381bc7;    
+}
+header.bg_beer{
+    background: #fd9a008a;
+}
+
+
 .top-bar_sub .btn-primary {
     color: #000;
     background-color: #00bce400;
@@ -510,6 +518,7 @@ a.animated-button.gibson-three:hover:after {
     max-width: 1000px;
     list-style: none;
     text-align: center;
+    margin: 0.5rem 0;
 }
 
 /* Common style */
@@ -796,10 +805,19 @@ a.shop:hover {
 h3.tittle-w3layouts {
     color: #353434;
     font-size: 3em;
-    text-align: left;
     letter-spacing: 1px;
     font-weight: 400;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
+    text-align: center;
+}
+a.tittle-w3layouts {
+    display: block;
+    color: #353434;
+    font-size: 1em;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.14);
+    text-align: right;
 }
 
 .about-main {
@@ -1430,8 +1448,12 @@ a.b-home:hover {
     padding: 3em 0 0 0;
 }
 .owl-carousel.owl-theme.row.owl-loaded.owl-drag {
+    /*background: #fff;*/
+    padding: 10px;
+    opacity: 0.9;
     margin: 0;
 }
+
 h3.tittle-w3layouts.two{
     font-weight:300;
     color:#fff;
@@ -1636,12 +1658,13 @@ ul.links li a:hover {
 }
 .owl-item.active {
     padding: 15px;
-    border: 1px solid #e4e4e4;
+    /*border: 1px solid #e4e4e4;*/
 }
 
 /*--social-icons--*/
 .footer-social li {
     display: inline-block;
+    color: #fff;
 }
 .footer-social li a {
     color: #999;

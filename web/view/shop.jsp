@@ -43,27 +43,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<div class="banner-top container-fluid" id="home">
 		<!-- header -->
-		<header>
+		<header class="bg_beer">
 			<div class="row">
 				<div class="col-md-3 top-info text-left mt-lg-4">
-					<h6>Need Help</h6>
+					<!-- <h6>Need Help</h6>
 					<ul>
 						<li>
 							<i class="fas fa-phone"></i> Call</li>
 						<li class="number-phone mt-3">12345678099</li>
-					</ul>
+					</ul> -->
 				</div>
 				<div class="col-md-6 logo-w3layouts text-center">
 					<h1 class="logo-w3layouts">
 						<a class="navbar-brand" href="index.html">
-							Goggles </a>
+							ALC </a>
 					</h1>
 				</div>
 
 				<div class="col-md-3 top-info-cart text-right mt-lg-4">
-					<ul class="cart-inner-info">
+					<c:choose>
+		<c:when test="${login_user == null }">
+			<ul class="cart-inner-info">
+					
 						<li class="button-log">
 							<a class="btn-open" href="#">
+								<span class="fa fa-user" aria-hidden="true"></span>
+							</a>
+						</li>
+						
+					</ul>
+		</c:when>
+		<c:otherwise>
+			<ul class="cart-inner-info">
+						<li class="button-log">
+							${login_user.user_id }, welcome
+							<a class="btn-open" href="logout.alc">
 								<span class="fa fa-user" aria-hidden="true"></span>
 							</a>
 						</li>
@@ -78,7 +92,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</form>
 						</li>
 					</ul>
-					<!---->
+		</c:otherwise>
+		</c:choose>
+					<!--Login/SignUp-->
 					<div class="overlay-login text-left">
 						<button type="button" class="overlay-close1">
 							<i class="fa fa-times" aria-hidden="true"></i>
@@ -86,27 +102,73 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="wrap">
 							<h5 class="text-center mb-4">Login Now</h5>
 							<div class="login p-5 bg-dark mx-auto mw-100">
-								<form action="#" method="post">
+								<form action="login.alc" method="post">
 									<div class="form-group">
-										<label class="mb-2">Email address</label>
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+										<label class="mb-2">ID</label>
+										<input type="text" class="form-control" id="idInputId" name="id" aria-describedby="emailHelp" placeholder="" required="">
+										<small id="emailHelp" class="form-text text-muted">환영합니다. 아이디를 입력해 주세요.</small>
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Password</label>
-										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
+										<input type="password" class="form-control" id="loginpw" name="pw" placeholder="" required="">
 									</div>
 									<div class="form-check mb-2">
 										<input type="checkbox" class="form-check-input" id="exampleCheck1">
 										<label class="form-check-label" for="exampleCheck1">Check me out</label>
 									</div>
-									<button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
-
+									<button type="submit" class="btn btn-primary submit mb-4">로그인</button>
+									<button class="btn btn-primary button-signup mb-4">회원가입</button>
 								</form>
 							</div>
-							<!---->
 						</div>
 					</div>
+					<!---->
+
+					<div class="overlay-signup text-left">
+						<button type="button" class="overlay-close2">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</button>
+						<div class="wrap">
+							<h5 class="text-center mb-4">Register Now</h5>
+							<div class="login p-5 bg-dark mx-auto mw-100">
+								<form action="#" method="post">
+									<div class="form-group">
+										<label class="mb-2">Email address</label>
+										<input type="text" class="form-control" id="exampleInputId" name="id" aria-describedby="idHelp" placeholder="" required="">
+										<small id="emailHelp" class="form-text text-muted">아이디를 입력해 주세요.</small>
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Password</label>
+										<input type="password" class="form-control" id="regpw" name="pw" placeholder="" required="">
+										<small id="passwordHelp" class="form-text text-muted">8자리 이상 비밀번호를 입력해 주세요.</small>
+
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Password Check</label>
+										<input type="password" class="form-control" id="exampleInputPassword2" placeholder="" required="">
+										<small id="passwordHelp" class="form-text text-muted">비밀번호를 다시 한번 입력해 주세요.</small>
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Name</label>
+										<input type="text" class="form-control" id="exampleInputName" name="name" placeholder="" required="">
+										<small id="nameHelp" class="form-text text-muted">본인의 성함을 입력해 주세요.</small>
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Addresss</label>
+										<input type="text" class="form-control" id="exampleInputAddress" name="address"placeholder="" required="">
+										<small id="addressHelp" class="form-text text-muted">기본 배송 주소를 입력해 주세요.</small>
+									</div>																		
+									<div class="form-check mb-2">
+										<input type="checkbox" class="form-check-input" id="exampleCheck1">
+										<label class="form-check-label" for="exampleCheck1">위 약관에 동의합니다.</label>
+									</div>
+									<br>
+									<button type="submit" class="btn btn-primary submit mb-4">회원가입</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!--// Login/SignUp-->
 					<!---->
 				</div>
 			</div>
@@ -140,17 +202,37 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 					</span>
 				</button>
+
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav nav-mega mx-auto">
 						<li class="nav-item">
-							<a class="nav-link ml-lg-0" href="index.html">Home
+							<a class="nav-link ml-lg-0" href="#">전체
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">소주</a>
+						</li>						
+						<li class="nav-item">
+							<a class="nav-link" href="#">막걸리</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="#">맥주
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" href="#">위스키</a>
 						</li>
-						<li class="nav-item dropdown">
+						<li class="nav-item">
+							<a class="nav-link" href="#">보드카</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">와인</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">기타</a>
+						</li>																														
+<!-- 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
 								Features
@@ -185,7 +267,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
 											<div class="media-mini mt-3">
 												<a href="shop.html">
-													<img src="<c:url value="/resource/images/g2.jpg" />" class="img-fluid" alt="">
+													<img src="images/g2.jpg" class="img-fluid" alt="">
 												</a>
 											</div>
 										</div>
@@ -193,7 +275,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h5 class="tittle-w3layouts-sub">Tittle goes here </h5>
 											<div class="media-mini mt-3">
 												<a href="shop.html">
-													<img src="<c:url value="/resource/images/g3.jpg" />" class="img-fluid" alt="">
+													<img src="images/g3.jpg" class="img-fluid" alt="">
 												</a>
 											</div>
 
@@ -203,7 +285,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</li>
 							</ul>
 						</li>
-						<li class="nav-item dropdown active">
+						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
 								Shop
@@ -285,7 +367,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h5 class="tittle-w3layouts-sub-nav">Tittle goes here </h5>
 											<div class="media-mini mt-3">
 												<a href="shop.html">
-													<img src="<c:url value="/resource/images/g1.jpg" />" class="img-fluid" alt="">
+													<img src="images/g1.jpg" class="img-fluid" alt="">
 												</a>
 											</div>
 
@@ -294,13 +376,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									<hr>
 								</li>
 							</ul>
-
-
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="contact.html">Contact</a>
-						</li>
-
+						</li> -->
 					</ul>
 
 				</div>
@@ -325,10 +404,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<!--//banner -->
 		<!--/shop-->
-		<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
+		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 bg_beer">
 			<div class="container-fluid">
 				<div class="inner-sec-shop px-lg-4 px-3">
-					<h3 class="tittle-w3layouts my-lg-4 mt-3">New Arrivals for you </h3>
+					<!-- <h3 class="tittle-w3layouts my-lg-4 mt-3">Every Beer</h3> -->
 					<div class="row">
 						<!-- product left -->
 						<div class="side-bar col-lg-3">
@@ -459,11 +538,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<!-- //reviews -->
 							<!-- deals -->
-							<div class="deal-leftmk left-side">
+							<!-- <div class="deal-leftmk left-side">
 								<h3 class="agileits-sear-head">Special Deals</h3>
 								<div class="special-sec1">
 									<div class="img-deals">
-										<img src="<c:url value="/resource/images/s1.jpg" />" alt="">
+										<img src="images/s1.jpg" alt="">
 									</div>
 									<div class="img-deal1">
 										<h3>Farenheit (Grey)</h3>
@@ -473,7 +552,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="special-sec1">
 									<div class="col-xs-4 img-deals">
-										<img src="<c:url value="/resource/images/s2.jpg" />" alt="">
+										<img src="images/s2.jpg" alt="">
 									</div>
 									<div class="col-xs-8 img-deal1">
 										<h3>Opium (Grey)</h3>
@@ -483,7 +562,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								</div>
 								<div class="special-sec1">
 										<div class="col-xs-4 img-deals">
-											<img src="<c:url value="/resource/images/m2.jpg" />" alt="">
+											<img src="images/m2.jpg" alt="">
 										</div>
 										<div class="col-xs-8 img-deal1">
 											<h3>Azmani Round</h3>
@@ -493,7 +572,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="special-sec1">
 											<div class="col-xs-4 img-deals">
-												<img src="<c:url value="/resource/images/m4.jpg" />" alt="">
+												<img src="images/m4.jpg" alt="">
 											</div>
 											<div class="col-xs-8 img-deal1">
 												<h3>Farenheit Oval</h3>
@@ -501,241 +580,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 											<div class="clearfix"></div>
 										</div>
-							</div>
+							</div> -->
 							<!-- //deals -->
 						</div>
 						<!-- //product left -->
 						<!--/product right-->
 						<div class="left-ads-display col-lg-9">
-							<div class="wrapper_top_shop">
-								<div class="row">
+							<div class="wrapper_top_shop bg_beer">
+								<!-- <div class="row">
 										<div class="col-md-6 shop_left">
-												<img src="<c:url value="/resource/images/banner3.jpg" />" alt="">
+												<img src="images/banner3.jpg" alt="">
 												<h6>40% off</h6>
 											</div>
 											<div class="col-md-6 shop_right">
-												<img src="<c:url value="/resource/images/banner4.jpg" />" alt="">
+												<img src="images/banner4.jpg" alt="">
 												<h6>50% off</h6>
 											</div>
 						
-								</div>
-								<div class="row">
-									<!-- /womens -->
+								</div> -->
+				<c:choose>
+					<c:when test="${center !=null }">
+						<jsp:include page="${center }.jsp"/>
+					</c:when>
+					<c:otherwise>
+						<jsp:include page="product/list.jsp"/>
+					</c:otherwise>
+				</c:choose>
+								
+								
+								<!-- <div class="row">
 									<div class="col-md-3 product-men women_two shop-gd">
-										<div class="product-googles-info googles">
+										<div class="product-googles-info bg_beer">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s1.jpg" />" class="img-fluid" alt="">
-													<div class="men-cart-pro">
-														<div class="inner-men-cart-pro">
-															<a href="single.html" class="link-product-add-cart">Quick View</a>
-														</div>
-													</div>
-													<span class="product-new-top">New</span>
-												</div>
-												<div class="item-info-product">
-													<div class="info-product-price">
-														<div class="grid_meta">
-															<div class="product_price">
-																<h4>
-																	<a href="single.html">Farenheit (Grey)</a>
-																</h4>
-																<div class="grid-price mt-2">
-																	<span class="money ">$575.00</span>
-																</div>
-															</div>
-															<ul class="stars">
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star-half-o" aria-hidden="true"></i>
-																	</a>
-																</li>
-															</ul>
-														</div>
-														<div class="googles single-item hvr-outline-out">
-															<form action="#" method="post">
-																<input type="hidden" name="cmd" value="_cart">
-																<input type="hidden" name="add" value="1">
-																<input type="hidden" name="googles_item" value="Farenheit">
-																<input type="hidden" name="amount" value="575.00">
-																<button type="submit" class="googles-cart pgoogles-cart">
-																	<i class="fas fa-cart-plus"></i>
-																</button>
-															</form>
-
-														</div>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3 product-men women_two shop-gd">
-										<div class="product-googles-info googles">
-											<div class="men-pro-item">
-												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s2.jpg" />" class="img-fluid" alt="">
-													<div class="men-cart-pro">
-														<div class="inner-men-cart-pro">
-															<a href="single.html" class="link-product-add-cart">Quick View</a>
-														</div>
-													</div>
-													<span class="product-new-top">New</span>
-												</div>
-												<div class="item-info-product">
-
-													<div class="info-product-price">
-														<div class="grid_meta">
-															<div class="product_price">
-																<h4>
-																	<a href="single.html">Opium (Grey)</a>
-																</h4>
-																<div class="grid-price mt-2">
-																	<span class="money ">$325.00</span>
-																</div>
-															</div>
-															<ul class="stars">
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star-half-o" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star-o" aria-hidden="true"></i>
-																	</a>
-																</li>
-															</ul>
-														</div>
-														<div class="googles single-item hvr-outline-out">
-															<form action="#" method="post">
-																<input type="hidden" name="cmd" value="_cart">
-																<input type="hidden" name="add" value="1">
-																<input type="hidden" name="googles_item" value="Opium (Grey)">
-																<input type="hidden" name="amount" value="325.00">
-																<button type="submit" class="googles-cart pgoogles-cart">
-																	<i class="fas fa-cart-plus"></i>
-																</button>
-
-															</form>
-
-														</div>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3 product-men women_two shop-gd">
-										<div class="product-googles-info googles">
-											<div class="men-pro-item">
-												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s3.jpg" />" class="img-fluid" alt="">
-													<div class="men-cart-pro">
-														<div class="inner-men-cart-pro">
-															<a href="single.html" class="link-product-add-cart">Quick View</a>
-														</div>
-													</div>
-													<span class="product-new-top">New</span>
-												</div>
-												<div class="item-info-product">
-
-													<div class="info-product-price">
-														<div class="grid_meta">
-															<div class="product_price">
-																<h4>
-																	<a href="single.html">Kenneth Cole</a>
-																</h4>
-																<div class="grid-price mt-2">
-																	<span class="money ">$575.00</span>
-																</div>
-															</div>
-															<ul class="stars">
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star" aria-hidden="true"></i>
-																	</a>
-																</li>
-																<li>
-																	<a href="#">
-																		<i class="fa fa-star-half-o" aria-hidden="true"></i>
-																	</a>
-																</li>
-															</ul>
-														</div>
-														<div class="googles single-item hvr-outline-out">
-															<form action="#" method="post">
-																<input type="hidden" name="cmd" value="_cart">
-																<input type="hidden" name="add" value="1">
-																<input type="hidden" name="googles_item" value="Kenneth Cole">
-																<input type="hidden" name="amount" value="575.00">
-																<button type="submit" class="googles-cart pgoogles-cart">
-																	<i class="fas fa-cart-plus"></i>
-																</button>
-															</form>
-
-														</div>
-													</div>
-													<div class="clearfix"></div>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3 product-men women_two shop-gd">
-										<div class="product-googles-info googles">
-											<div class="men-pro-item">
-												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s4.jpg" />" class="img-fluid" alt="">
+													<img src="images/s4.jpg" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -801,14 +679,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="row my-lg-3 my-0">
-										<!-- /womens -->
+								</div> -->
+								<!-- <div class="row my-lg-3 my-0">
+										/womens
 										<div class="col-md-3 product-men women_two shop-gd">
-											<div class="product-googles-info googles">
+											<div class="product-googles-info bg_beer">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/m1.jpg" />" class="img-fluid" alt="">
+														<img src="images/m1.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -875,10 +753,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</div>
 										<div class="col-md-3 product-men women_two shop-gd">
-											<div class="product-googles-info googles">
+											<div class="product-googles-info bg_beer">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/m2.jpg" />" class="img-fluid" alt="">
+														<img src="images/m2.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -944,10 +822,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</div>
 										<div class="col-md-3 product-men women_two shop-gd">
-											<div class="product-googles-info googles">
+											<div class="product-googles-info bg_beer">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/m3.jpg" />" class="img-fluid" alt="">
+														<img src="images/m3.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1014,10 +892,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 										</div>
 										<div class="col-md-3 product-men women_two shop-gd">
-											<div class="product-googles-info googles">
+											<div class="product-googles-info bg_beer">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/m4.jpg" />" class="img-fluid" alt="">
+														<img src="images/m4.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1083,15 +961,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 											</div>
 										</div>
-										<!-- /mens -->
-									</div>
-									<div class="row">
-											<!-- /womens -->
+										/mens
+									</div> -->
+									<!-- <div class="row">
+											/womens
 											<div class="col-md-3 product-men women_two shop-gd">
-												<div class="product-googles-info googles">
+												<div class="product-googles-info bg_beer">
 													<div class="men-pro-item">
 														<div class="men-thumb-item">
-															<img src="<c:url value="/resource/images/s1.jpg" />" class="img-fluid" alt="">
+															<img src="images/s1.jpg" class="img-fluid" alt="">
 															<div class="men-cart-pro">
 																<div class="inner-men-cart-pro">
 																	<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1157,10 +1035,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 											</div>
 											<div class="col-md-3 product-men women_two shop-gd">
-												<div class="product-googles-info googles">
+												<div class="product-googles-info bg_beer">
 													<div class="men-pro-item">
 														<div class="men-thumb-item">
-															<img src="<c:url value="/resource/images/s2.jpg" />" class="img-fluid" alt="">
+															<img src="images/s2.jpg" class="img-fluid" alt="">
 															<div class="men-cart-pro">
 																<div class="inner-men-cart-pro">
 																	<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1227,10 +1105,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 											</div>
 											<div class="col-md-3 product-men women_two shop-gd">
-												<div class="product-googles-info googles">
+												<div class="product-googles-info bg_beer">
 													<div class="men-pro-item">
 														<div class="men-thumb-item">
-															<img src="<c:url value="/resource/images/s3.jpg" />" class="img-fluid" alt="">
+															<img src="images/s3.jpg" class="img-fluid" alt="">
 															<div class="men-cart-pro">
 																<div class="inner-men-cart-pro">
 																	<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1297,10 +1175,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												</div>
 											</div>
 											<div class="col-md-3 product-men women_two shop-gd">
-												<div class="product-googles-info googles">
+												<div class="product-googles-info bg_beer">
 													<div class="men-pro-item">
 														<div class="men-thumb-item">
-															<img src="<c:url value="/resource/images/s4.jpg" />" class="img-fluid" alt="">
+															<img src="images/s4.jpg" class="img-fluid" alt="">
 															<div class="men-cart-pro">
 																<div class="inner-men-cart-pro">
 																	<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1366,7 +1244,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 													</div>
 												</div>
 											</div>
-										</div>
+										</div> -->
 							</div>
 						</div>
 						<!--//product right-->
@@ -1374,16 +1252,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<!--/slide-->
 				<div class="slider-img mid-sec mt-lg-5 mt-2">
 						<!--//banner-sec-->
-						<h3 class="tittle-w3layouts text-left my-lg-4 my-3">Featured Products</h3>
+						<!-- <h3 class="tittle-w3layouts text-left my-lg-4 my-3">Featured Products</h3> -->
 						<div class="mid-slider">
+							<hr>
 							<div class="owl-carousel owl-theme row">
 								<div class="item">
 									<div class="gd-box-info text-center">
 										<div class="product-men women_two bot-gd">
-											<div class="product-googles-info slide-img googles">
+											<div class="product-googles-info1 slide-img googles">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/s5.jpg" />" class="img-fluid" alt="">
+														<img src="images/s5.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1455,10 +1334,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="item">
 									<div class="gd-box-info text-center">
 										<div class="product-men women_two bot-gd">
-											<div class="product-googles-info slide-img googles">
+											<div class="product-googles-info1 slide-img googles">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/s6.jpg" />" class="img-fluid" alt="">
+														<img src="images/s6.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1529,10 +1408,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="item">
 									<div class="gd-box-info text-center">
 										<div class="product-men women_two bot-gd">
-											<div class="product-googles-info slide-img googles">
+											<div class="product-googles-info1 slide-img googles">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/s7.jpg" />" class="img-fluid" alt="">
+														<img src="images/s7.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1603,10 +1482,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="item">
 									<div class="gd-box-info text-center">
 										<div class="product-men women_two bot-gd">
-											<div class="product-googles-info slide-img googles">
+											<div class="product-googles-info1 slide-img googles">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/s8.jpg" />" class="img-fluid" alt="">
+														<img src="images/s8.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1677,10 +1556,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="item">
 									<div class="gd-box-info text-center">
 										<div class="product-men women_two bot-gd">
-											<div class="product-googles-info slide-img googles">
+											<div class="product-googles-info1 slide-img googles">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/s9.jpg" />" class="img-fluid" alt="">
+														<img src="images/s9.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1751,10 +1630,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<div class="item">
 									<div class="gd-box-info text-center">
 										<div class="product-men women_two bot-gd">
-											<div class="product-googles-info slide-img googles">
+											<div class="product-googles-info1 slide-img googles">
 												<div class="men-pro-item">
 													<div class="men-thumb-item">
-														<img src="<c:url value="/resource/images/s10.jpg" />" class="img-fluid" alt="">
+														<img src="images/s10.jpg" class="img-fluid" alt="">
 														<div class="men-cart-pro">
 															<div class="inner-men-cart-pro">
 																<a href="single.html" class="link-product-add-cart">Quick View</a>

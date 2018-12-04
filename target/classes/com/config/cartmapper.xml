@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CartMapper">
+	
+	<select id="select" parameterType="INTEGER" resultType="cart">
+		SELECT * FROM CART WHERE CID=#{obj}
+	</select>
+	<select id="selectall" resultType="cart">
+		SELECT * FROM CART
+	</select>
+	<insert id="insert" parameterType="cart">
+		INSERT INTO CART VALUES (CID_SEQ.NEXTVAL,#{user_id},#{pid},#{qt},#{price},sysdate)
+	</insert>
+	<update id="update" parameterType="cart">
+		UPDATE CART SET QT=#{qt},PRICE=#{price} WHERE CID=#{cid}
+	</update>
+	<delete id="delete" parameterType="INTEGER">
+		DELETE FROM CART WHERE CID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

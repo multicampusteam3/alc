@@ -22,7 +22,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		addEventListener("load", function () {
 			setTimeout(hideURLbar, 0);
 		}, false);
-
+	
 		function hideURLbar() {
 			window.scrollTo(0, 1);
 		}
@@ -46,12 +46,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<header>
 			<div class="row">
 				<div class="col-md-3 top-info text-left mt-lg-4">
-					<h6>Need Help</h6>
+					<!-- <h6>Need Help</h6>
 					<ul>
 						<li>
-							<i class="fas fa-phone"></i> 연락처</li>
-						<li class="number-phone mt-3">123456789</li>
-					</ul>
+							<i class="fas fa-phone"></i> Call</li>
+						<li class="number-phone mt-3">12345678099</li>
+					</ul> -->
 				</div>
 				<div class="col-md-6 logo-w3layouts text-center">
 					<h1 class="logo-w3layouts">
@@ -61,9 +61,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 
 				<div class="col-md-3 top-info-cart text-right mt-lg-4">
-					<ul class="cart-inner-info">
+									<c:choose>
+		<c:when test="${login_user == null }">
+			<ul class="cart-inner-info">
+					
 						<li class="button-log">
 							<a class="btn-open" href="#">
+								<span class="fa fa-user" aria-hidden="true"></span>
+							</a>
+						</li>
+						
+					</ul>
+		</c:when>
+		<c:otherwise>
+			<ul class="cart-inner-info">
+						<li class="button-log">
+							${login_user.user_id }, welcome
+							<a class="btn-open" href="logout.alc">
 								<span class="fa fa-user" aria-hidden="true"></span>
 							</a>
 						</li>
@@ -78,7 +92,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</form>
 						</li>
 					</ul>
-					<!---->
+		</c:otherwise>
+		</c:choose>
+					<!--Login/SignUp-->
 					<div class="overlay-login text-left">
 						<button type="button" class="overlay-close1">
 							<i class="fa fa-times" aria-hidden="true"></i>
@@ -86,28 +102,73 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="wrap">
 							<h5 class="text-center mb-4">Login Now</h5>
 							<div class="login p-5 bg-dark mx-auto mw-100">
-								<form action="#" method="post">
+								<form action="login.alc" method="post">
 									<div class="form-group">
-										<label class="mb-2">Email address</label>
-										<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+										<label class="mb-2">ID</label>
+										<input type="text" class="form-control" id="idInputId" name="id" aria-describedby="emailHelp" placeholder="" required="">
+										<small id="emailHelp" class="form-text text-muted">환영합니다. 아이디를 입력해 주세요.</small>
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Password</label>
-										<input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
+										<input type="password" class="form-control" id="loginpw" name="pw" placeholder="" required="">
 									</div>
 									<div class="form-check mb-2">
 										<input type="checkbox" class="form-check-input" id="exampleCheck1">
 										<label class="form-check-label" for="exampleCheck1">Check me out</label>
 									</div>
-									<button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
-
+									<button type="submit" class="btn btn-primary submit mb-4">로그인</button>
+									<button class="btn btn-primary button-signup mb-4">회원가입</button>
 								</form>
 							</div>
-							<!---->
 						</div>
 					</div>
 					<!---->
+
+					<div class="overlay-signup text-left">
+						<button type="button" class="overlay-close2">
+							<i class="fa fa-times" aria-hidden="true"></i>
+						</button>
+						<div class="wrap">
+							<h5 class="text-center mb-4">Register Now</h5>
+							<div class="login p-5 bg-dark mx-auto mw-100">
+								<form action="#" method="post">
+									<div class="form-group">
+										<label class="mb-2">Email address</label>
+										<input type="text" class="form-control" id="exampleInputId" name="id" aria-describedby="idHelp" placeholder="" required="">
+										<small id="emailHelp" class="form-text text-muted">아이디를 입력해 주세요.</small>
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Password</label>
+										<input type="password" class="form-control" id="regpw" name="pw" placeholder="" required="">
+										<small id="passwordHelp" class="form-text text-muted">8자리 이상 비밀번호를 입력해 주세요.</small>
+
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Password Check</label>
+										<input type="password" class="form-control" id="exampleInputPassword2" placeholder="" required="">
+										<small id="passwordHelp" class="form-text text-muted">비밀번호를 다시 한번 입력해 주세요.</small>
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Name</label>
+										<input type="text" class="form-control" id="exampleInputName" name="name" placeholder="" required="">
+										<small id="nameHelp" class="form-text text-muted">본인의 성함을 입력해 주세요.</small>
+									</div>
+									<div class="form-group">
+										<label class="mb-2">Addresss</label>
+										<input type="text" class="form-control" id="exampleInputAddress" name="address"placeholder="" required="">
+										<small id="addressHelp" class="form-text text-muted">기본 배송 주소를 입력해 주세요.</small>
+									</div>																		
+									<div class="form-check mb-2">
+										<input type="checkbox" class="form-check-input" id="exampleCheck1">
+										<label class="form-check-label" for="exampleCheck1">위 약관에 동의합니다.</label>
+									</div>
+									<br>
+									<button type="submit" class="btn btn-primary submit mb-4">회원가입</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!--// Login/SignUp-->
 				</div>
 			</div>
 			<div class="search">
@@ -140,17 +201,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 					</span>
 				</button>
+
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav nav-mega mx-auto">
 						<li class="nav-item active">
-							<a class="nav-link ml-lg-0" href="index.html">Home
+							<a class="nav-link ml-lg-0" href="#">전체
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" href="shop.alc?sec=bg_soju">소주</a>
+						</li>						
+						<li class="nav-item">
+							<a class="nav-link" href="#">막걸리</a>
 						</li>
-						<li class="nav-item dropdown">
+						<li class="nav-item">
+							<a class="nav-link" href="#">맥주</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">위스키</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">보드카</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">와인</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">기타</a>
+						</li>																														
+<!-- 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
 								Features
@@ -185,7 +265,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h5 class="tittle-w3layouts-sub"> Tittle goes here </h5>
 											<div class="media-mini mt-3">
 												<a href="shop.html">
-													<img src="<c:url value="/resource/images/g2.jpg" />" class="img-fluid" alt="">
+													<img src="images/g2.jpg" class="img-fluid" alt="">
 												</a>
 											</div>
 										</div>
@@ -193,7 +273,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h5 class="tittle-w3layouts-sub">Tittle goes here </h5>
 											<div class="media-mini mt-3">
 												<a href="shop.html">
-													<img src="<c:url value="/resource/images/g3.jpg" />" class="img-fluid" alt="">
+													<img src="images/g3.jpg" class="img-fluid" alt="">
 												</a>
 											</div>
 
@@ -285,7 +365,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											<h5 class="tittle-w3layouts-sub-nav">Tittle goes here </h5>
 											<div class="media-mini mt-3">
 												<a href="shop.html">
-													<img src="<c:url value="/resource/images/g1.jpg" />" />" class="img-fluid" alt="">
+													<img src="images/g1.jpg" class="img-fluid" alt="">
 												</a>
 											</div>
 
@@ -297,7 +377,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="contact.html">Contact</a>
-						</li>
+						</li> -->
 					</ul>
 
 				</div>
@@ -305,7 +385,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</header>
 		<!-- //header -->
 		<!-- banner -->
-		<div class="banner">
+		
+		
+						<div class="banner">
 			<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -316,8 +398,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active">
 						<div class="carousel-caption text-center">
-							<h3>Men’s eyewear
-								<span>Cool summer sale 50% off</span>
+							<h3>여기에 문구를 작성하세요
+								<span>sale 30% off</span>
 							</h3>
 							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 						</div>
@@ -360,590 +442,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<!--//banner -->
 		</div>
+		
 	</div>
 	<!--//banner-sec-->
 	<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container-fluid">
 			<div class="inner-sec-shop px-lg-4 px-3">
-				<h3 class="tittle-w3layouts my-lg-4 my-4">New Arrivals for you </h3>
-				<div class="row">
-					<!-- /womens -->
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/s1.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Farenheit (Grey)</a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$575.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Farenheit">
-												<input type="hidden" name="amount" value="575.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-
-												
-											</form>
-
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/s2.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Opium (Grey)</a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$325.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Opium (Grey)">
-												<input type="hidden" name="amount" value="325.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-
-												
-											</form>
-
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/s3.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Kenneth Cole</a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$575.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Kenneth Cole">
-												<input type="hidden" name="amount" value="575.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-												
-											</form>
-
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/s4.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Farenheit Oval </a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$325.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Farenheit Oval">
-												<input type="hidden" name="amount" value="325.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-
-												
-											</form>
-
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
+				<h3 class="tittle-w3layouts my-lg-4 my-4"> 다양함을 즐기자!! </h3>
+				<a href="#" class="tittle-w3layouts my-lg-4 my-4">+more</a>
+				<hr>
+	<!-- 리스트 출력 -->
+				<c:choose>
+					<c:when test="${center !=null }">
+						<jsp:include page="${center }.jsp"/>
+					</c:when>
+					<c:otherwise>
+						<jsp:include page="product/list.jsp"/>
+					</c:otherwise>
+				</c:choose>
+	<!-- 리스트 출력 -->
+				
 				</div>
-				<!-- //womens -->
-				<!-- /mens -->
-				<div class="row mt-lg-3 mt-0">
-					<!-- /womens -->
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/m1.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Aislin Wayfarer </a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$775.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Aislin Wayfarer">
-												<input type="hidden" name="amount" value="775.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-												
-											</form>
-
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/m2.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Azmani Round </a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$725.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Azmani Round">
-												<input type="hidden" name="amount" value="725.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-
-												
-											</form>
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/m3.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Farenheit Wayfarer</a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$475.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Farenheit Wayfarer">
-												<input type="hidden" name="amount" value="475.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-											
-											</form>
-
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 product-men women_two">
-						<div class="product-googles-info googles">
-							<div class="men-pro-item">
-								<div class="men-thumb-item">
-									<img src="<c:url value="/resource/images/m4.jpg" />" class="img-fluid" alt="">
-									<div class="men-cart-pro">
-										<div class="inner-men-cart-pro">
-											<a href="single.html" class="link-product-add-cart">Quick View</a>
-										</div>
-									</div>
-									<span class="product-new-top">New</span>
-								</div>
-								<div class="item-info-product">
-
-									<div class="info-product-price">
-										<div class="grid_meta">
-											<div class="product_price">
-												<h4>
-													<a href="single.html">Fossil Wayfarer </a>
-												</h4>
-												<div class="grid-price mt-2">
-													<span class="money ">$825.00</span>
-												</div>
-											</div>
-											<ul class="stars">
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-half-o" aria-hidden="true"></i>
-													</a>
-												</li>
-												<li>
-													<a href="#">
-														<i class="fa fa-star-o" aria-hidden="true"></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-										<div class="googles single-item hvr-outline-out">
-											<form action="#" method="post">
-												<input type="hidden" name="cmd" value="_cart">
-												<input type="hidden" name="add" value="1">
-												<input type="hidden" name="googles_item" value="Fossil Wayfarer">
-												<input type="hidden" name="amount" value="825.00">
-												<button type="submit" class="googles-cart pgoogles-cart">
-													<i class="fas fa-cart-plus"></i>
-												</button>
-											</form>
-
-										</div>
-									</div>
-									<div class="clearfix"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- /mens -->
-				</div>
+				
 				<!--//row-->
 				<!--/meddle-->
 				<div class="row">
@@ -965,10 +485,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="item">
 								<div class="gd-box-info text-center">
 									<div class="product-men women_two bot-gd">
-										<div class="product-googles-info slide-img googles">
+										<div class="product-googles-info1 slide-img googles">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s5.jpg" />" class="img-fluid" alt="">
+													<img src="images/s5.jpg" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1039,10 +559,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="item">
 								<div class="gd-box-info text-center">
 									<div class="product-men women_two bot-gd">
-										<div class="product-googles-info slide-img googles">
+										<div class="product-googles-info1 slide-img googles">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s6.jpg" />" class="img-fluid" alt="">
+													<img src="images/s6.jpg" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1113,10 +633,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="item">
 								<div class="gd-box-info text-center">
 									<div class="product-men women_two bot-gd">
-										<div class="product-googles-info slide-img googles">
+										<div class="product-googles-info1 slide-img googles">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s7.jpg" />" class="img-fluid" alt="">
+													<img src="images/s7.jpg" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1187,10 +707,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="item">
 								<div class="gd-box-info text-center">
 									<div class="product-men women_two bot-gd">
-										<div class="product-googles-info slide-img googles">
+										<div class="product-googles-info1 slide-img googles">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s8.jpg" />" class="img-fluid" alt="">
+													<img src="images/s8.jpg" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1261,10 +781,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="item">
 								<div class="gd-box-info text-center">
 									<div class="product-men women_two bot-gd">
-										<div class="product-googles-info slide-img googles">
+										<div class="product-googles-info1 slide-img googles">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s9.jpg" />" class="img-fluid" alt="">
+													<img src="images/s9.jpg" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1335,10 +855,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="item">
 								<div class="gd-box-info text-center">
 									<div class="product-men women_two bot-gd">
-										<div class="product-googles-info slide-img googles">
+										<div class="product-googles-info1 slide-img googles">
 											<div class="men-pro-item">
 												<div class="men-thumb-item">
-													<img src="<c:url value="/resource/images/s10.jpg" />" class="img-fluid" alt="">
+													<img src="images/s10.jpg" class="img-fluid" alt="">
 													<div class="men-cart-pro">
 														<div class="inner-men-cart-pro">
 															<a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -1410,7 +930,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<!-- /testimonials -->
-				<div class="testimonials py-lg-4 py-3 mt-4">
+<!-- 				<div class="testimonials py-lg-4 py-3 mt-4">
 					<div class="testimonials-inner py-lg-4 py-3">
 						<h3 class="tittle-w3layouts text-center my-lg-4 my-4">Tesimonials</h3>
 						<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -1457,12 +977,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
+
 				<!-- //testimonials -->
+				<br>
+				<br>
+				<h3 class="tittle-w3layouts my-lg-4 my-4"> 그들의 평가가 궁금하다!? </h3>
+				<a href="#" class="tittle-w3layouts my-lg-4 my-4">+more</a>
+				<hr>
 				<div class="row galsses-grids pt-lg-5 pt-3">
 					<div class="col-lg-6 galsses-grid-left">
 						<figure class="effect-lexi">
-							<img src="<c:url value="/resource/images/banner4.jpg" />" alt="" class="img-fluid">
+							<img src="images/banner4.jpg" alt="" class="img-fluid">
 							<figcaption>
 								<h3>Editor's
 									<span>Pick</span>
@@ -1473,7 +999,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="col-lg-6 galsses-grid-left">
 						<figure class="effect-lexi">
-							<img src="<c:url value="/resource/images/banner1.jpg" />" alt="" class="img-fluid">
+							<img src="images/banner1.jpg" alt="" class="img-fluid">
+							<figcaption>
+								<h3>Editor's
+									<span>Pick</span>
+								</h3>
+								<p>Express your style now.</p>
+							</figcaption>
+						</figure>
+					</div>
+					<br>
+					<div class="col-lg-6 galsses-grid-left">
+						<figure class="effect-lexi">
+							<img src="images/banner1.jpg" alt="" class="img-fluid">
+							<figcaption>
+								<h3>Editor's
+									<span>Pick</span>
+								</h3>
+								<p>Express your style now.</p>
+							</figcaption>
+						</figure>
+					</div>
+					<div class="col-lg-6 galsses-grid-left">
+						<figure class="effect-lexi">
+							<img src="images/banner1.jpg" alt="" class="img-fluid">
 							<figcaption>
 								<h3>Editor's
 									<span>Pick</span>
@@ -1640,7 +1189,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<ul class="links">
 						<li>
-							<a href="index.html">메인 홈</a>
+							<a href="index.html">Home</a>
 						</li>
 						<li>
 							<a href="about.html">About</a>
@@ -1680,11 +1229,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</footer>
 	<!-- //footer -->
-
 	<!--jQuery-->
 	<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />">
 	<!-- newsletter modal -->
-	<!-- Modal -->
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
@@ -1744,17 +1291,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- //cart-js -->
 	<script>
-		$(document).ready(function () {
-			$(".button-log a").click(function () {
-				$(".overlay-login").fadeToggle(200);
-				$(this).toggleClass('btn-open').toggleClass('btn-close');
-			});
-		});
-		$('.overlay-close1').on('click', function () {
+	$(document).ready(function () {
+		$(".button-log a").click(function () {
 			$(".overlay-login").fadeToggle(200);
-			$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
-			open = false;
+			$(this).toggleClass('btn-open').toggleClass('btn-close');
 		});
+	});
+	$('.overlay-close1').on('click', function () {
+		$(".overlay-login").fadeToggle(200);
+		$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+		open = false;
+	});
+	$('.button-signup').on('click', function() {
+		$(".overlay-login").fadeToggle(200);
+		$(".overlay-signup").fadeToggle(200);
+	})
+	$('.overlay-close2').on('click', function () {
+		$(".overlay-signup").fadeToggle(200);
+		$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+		open = false;
+	});
 	</script>
 	<!-- carousel -->
 	<!-- Count-down -->

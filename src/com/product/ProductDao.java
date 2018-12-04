@@ -10,7 +10,7 @@ import com.mapper.ProductMapper;
 import com.vo.Product;
 
 @Repository("pdao")
-public class ProductDao implements Dao<String, Product> {
+public class ProductDao implements Dao<Integer, Product> {
 	
 	@Autowired
 	ProductMapper pm;
@@ -21,7 +21,7 @@ public class ProductDao implements Dao<String, Product> {
 	}
 
 	@Override
-	public void delete(String k) {
+	public void delete(Integer k) {
 		pm.delete(k);
 	}
 
@@ -31,13 +31,17 @@ public class ProductDao implements Dao<String, Product> {
 	}
 
 	@Override
-	public Product select(String k) {
+	public Product select(Integer k) {
 		return pm.select(k);
 	}
 
 	@Override
 	public ArrayList<Product> select() {
 		return pm.selectall();
+	}
+	
+	public ArrayList<Product> selectsec(Integer k) {
+		return pm.selectsec(k);
 	}
 
 }

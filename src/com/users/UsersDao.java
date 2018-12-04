@@ -40,4 +40,10 @@ public class UsersDao implements Dao<String, Users> {
 		return um.selectall();
 	}
 
+	@Override
+	public ArrayList<Users> selectsec(String k) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

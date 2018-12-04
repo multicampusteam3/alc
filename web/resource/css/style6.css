@@ -1,8 +1,8 @@
 
 .mobile-nav-button {
 		position: absolute;
-		right: 355px;
-		top: 24px;
+		right: 180px;
+		top: 26px;
 		z-index:9;
 	}
 /* Overlay style */
@@ -162,29 +162,29 @@ button#trigger-overlay {
 @media(max-width:1366px) {
     .mobile-nav-button {
         position: absolute;
-        right: 245px;
-        top: 24px;
+        right: 180px;
+        top: 26px;
     }
 }
 @media(max-width:1280px) {
     .mobile-nav-button {
         position: absolute;
-        right: 230px;
-        top: 24px;
+        right: 70px;
+        top: 26px;
     }
 }
 @media (max-width: 1080px){
     .mobile-nav-button {
         position: absolute;
-        right: 200px;
-        top: 24px;
+        right: 170px;
+        top: 26px;
     }
 }
 @media (max-width: 1050px){
     .mobile-nav-button {
         position: absolute;
-        right: 195px;
-        top: 24px;
+        right: 160px;
+        top: 26px;
     }
     .overlay-door form {
         width: 70%;
@@ -193,8 +193,8 @@ button#trigger-overlay {
 @media (max-width: 1024px){
     .mobile-nav-button {
         position: absolute;
-        right: 185px;
-        top: 24px;
+        right: 150px;
+        top: 26px;
     }
 }
 @media (max-width:767px){

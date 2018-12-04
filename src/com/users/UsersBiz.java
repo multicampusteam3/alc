@@ -13,7 +13,7 @@ import com.vo.Users;
 @Service("ubiz")
 public class UsersBiz implements Biz<String, Users> {
 	@Resource(name="udao")
-	Dao dao;
+	Dao<String,Users> dao;
 	
 	@Override
 	public void register(Users v) throws Exception {
@@ -38,6 +38,12 @@ public class UsersBiz implements Biz<String, Users> {
 	@Override
 	public ArrayList<Users> get() throws Exception {
 		return dao.select();
+	}
+
+	@Override
+	public ArrayList<Users> getsec(String k) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

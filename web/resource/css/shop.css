@@ -606,7 +606,14 @@ ul.stars li a i:hover {
 
 .product-googles-info {
 	padding: 15px;
-	border: 1px solid #e4e4e4;
+	/*border: 1px solid #e4e4e4;*/
+	/*background: #f6b974;*/
+}
+.product-googles-info.bg_beer{
+	background: #f6b974;	
+}
+.product-googles-info.bg_soju{
+	background: #012a05c9;
 }
 
 /*-- //effect on products --*/
@@ -823,6 +830,8 @@ input#amount1 {
 .side-bar {
 	padding: 20px 15px;
 	border: 1px solid #e4e4e4;
+	background: #fff;
+	opacity: 0.9;
 }
 
 .shop_left img,
@@ -933,8 +942,18 @@ input.checked {
 
 .wrapper_top_shop {
 	padding: 15px;
-	border: 1px solid #e4e4e4;
+	/*border: 1px solid #e4e4e4;*/
+	opacity: 0.9;
 }
+
+.wrapper_top_shop.bg_soju{
+	background: #2c1b0247;
+}
+
+.wrapper_top_shop.bg_beer{
+	background: #fd9a0047;
+}
+
 
 /*-- //special deals --*/
 .wrapper_top_shop h4 {
@@ -954,6 +973,8 @@ input.checked {
 
 .item-info-product {
 	text-align: center;
+	padding: 2px 10px;
+	background: #fff;
 }
 
 span.item_price {
@@ -1050,6 +1071,18 @@ ul.footer_list_icons.single_in li a:hover {
     color: #ff4e00;
     margin: 0;
     letter-spacing: 1px;
+}
+
+.single-right-left.bg_soju h3 {
+	color: #fff;
+}
+
+.single-right-left.bg_soju p > span {
+	color: #ddd;
+}
+.single-right-left.bg_soju label{
+	color: #fff;
+	font-weight: bold;
 }
 
 .single-right-left p {
