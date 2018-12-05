@@ -26,6 +26,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar() {
 			window.scrollTo(0, 1);
 		}
+		 function checkPwd(){
+			  var f1 = document.forms[0];
+			  var pw1 = f1.pwd.value;
+			  var pw2 = f1.pwd_check.value;
+			  if(pw1!=pw2){
+			   document.getElementById('checkPwd').style.color = "red";
+			   document.getElementById('checkPwd').innerHTML = "동일한 암호를 입력하세요."; 
+			  }else{
+			   document.getElementById('checkPwd').style.color = "black";
+			   document.getElementById('checkPwd').innerHTML = "암호가 확인 되었습니다."; 
+			   
+			  }
+			
+
+
 	</script>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/login_overlay.css">
@@ -131,9 +146,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<div class="wrap">
 							<h5 class="text-center mb-4">Register Now</h5>
 							<div class="login p-5 bg-dark mx-auto mw-100">
-								<form action="#" method="post">
+								<form action="register.alc" method="post">
 									<div class="form-group">
-										<label class="mb-2">Email address</label>
+										<label class="mb-2">ID</label>
 										<input type="text" class="form-control" id="exampleInputId" name="id" aria-describedby="idHelp" placeholder="" required="">
 										<small id="emailHelp" class="form-text text-muted">아이디를 입력해 주세요.</small>
 									</div>
@@ -145,8 +160,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Password Check</label>
-										<input type="password" class="form-control" id="exampleInputPassword2" placeholder="" required="">
-										<small id="passwordHelp" class="form-text text-muted">비밀번호를 다시 한번 입력해 주세요.</small>
+										<input type="password" class="form-control" id="exampleInputPassword2" name="pw_check" onkeyup="checkpwd()" placeholder="" required="">
+										<small id="passwordHelp" class="form-text text-muted">동일한 암호를 입력하세요.</small>
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Name</label>

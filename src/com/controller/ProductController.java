@@ -88,6 +88,7 @@ public class ProductController {
 			System.out.println(k +" "+ list);
 			mav.addObject("plist",list);
 			mav.addObject("sec", sec);
+			mav.addObject("center", "product/category_list");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

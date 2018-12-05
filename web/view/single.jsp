@@ -2,7 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!--/shop-->
-		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 bg_soju">
+		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 bg_beer">
+			<div>
+			<div>
 			<div class="container">
 				<div class="inner-sec-shop pt-lg-4 pt-3">
 					<div class="row">
@@ -134,7 +136,7 @@
 															</div>
 															<div class="clearfix"> </div>
 														</div>
-														<div class="add-review">
+														<!-- <div class="add-review">
 															<h4>add a review</h4>
 															<form action="#" method="post">
 																	<input class="form-control" type="text" name="Name" placeholder="Enter your email..." required="">
@@ -142,7 +144,7 @@
 																<textarea name="Message" required=""></textarea>
 																<input type="submit" value="SEND">
 															</form>
-														</div>
+														</div> -->
 													</div>
 					
 												</div>
