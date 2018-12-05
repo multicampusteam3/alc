@@ -10,7 +10,7 @@ import com.frame.Biz;
 import com.vo.Cart;
 
 @Controller
-public class CartController {
+public class CartController  {
 	
 	@Resource(name="cbiz")
 	Biz biz;

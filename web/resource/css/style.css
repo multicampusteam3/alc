@@ -73,14 +73,27 @@ label {
 /*-- header --*/
 
 header {
-    padding: 2em 2em 0 2em;
+    /*padding: 2em 2em 0 2em;*/
+    padding: 2em 0 0 0;
 }
 
 header.bg_soju{
     background: #4a381bc7;    
 }
+header.bg_makuly{
+    background: #e9d8bd8a;    
+}
 header.bg_beer{
     background: #fd9a008a;
+}
+header.bg_whiskey{
+    background: #4b2c04c9;
+}
+header.bg_vodka{
+    background: #cfd0f1d6;
+}
+header.bg_wine{
+    background: #11041ceb;
 }
 
 
@@ -133,7 +146,8 @@ h1.logo-w3layouts a.navbar-brand {
 
 .navbar-light .navbar-nav .nav-link,
 .dropdown-item {
-    color: #828284;
+    /*color: #828284;*/
+    color: #fff;
     font-size: 16px;
     letter-spacing: 2px;
     margin: 0em 0.5em;

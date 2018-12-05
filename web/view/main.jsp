@@ -1245,10 +1245,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</footer>
 	<!-- //footer -->
 	<!--jQuery-->
-	<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />">
+	<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />"> </script>
 	<!-- newsletter modal -->
 	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"> 
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1285,12 +1285,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- // modal -->
 
 	<!--search jQuery-->
-	<script src="<c:url value="/resource/js/modernizr-2.6.2.min.js" />">
-	<script src="<c:url value="/resource/js/classie-search.js" />">
-	<script src="<c:url value="/resource/js/demo1-search.js" />">
+	<script src="<c:url value="/resource/js/modernizr-2.6.2.min.js" />"> </script>
+	<script src="<c:url value="/resource/js/classie-search.js" />"> </script>
+	<script src="<c:url value="/resource/js/demo1-search.js" />"> </script>
 	<!--//search jQuery-->
 	<!-- cart-js -->
-	<script src="<c:url value="/resource/js/minicart.js" />">
+	<script src="<c:url value="/resource/js/minicart.js" />"> </script>
 	<script>
 		googles.render();
 
@@ -1329,7 +1329,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 	<!-- carousel -->
 	<!-- Count-down -->
-	<script src="<c:url value="/resource/js/simplyCountdown.js" />">
+	<script src="<c:url value="/resource/js/simplyCountdown.js" />"> </script>
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/simplyCountdown.css">
 	<script>
 		var d = new Date();
@@ -1340,7 +1340,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!--// Count-down -->
-	<script src="<c:url value="/resource/js/owl.carousel.js" />">
+	<script src="<c:url value="/resource/js/owl.carousel.js" />"> </script>
 	<script>
 		$(document).ready(function () {
 			$('.owl-carousel').owlCarousel({
@@ -1390,8 +1390,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!-- //dropdown nav -->
-  <script src="<c:url value="/resource/js/move-top.js" />">
-  <script src="<c:url value="/resource/js/easing.js" />">
+  <script src="<c:url value="/resource/js/move-top.js" />"> </script>
+  <script src="<c:url value="/resource/js/easing.js" />"> </script>
     <script>
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
@@ -1421,8 +1421,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </script>
     <!--// end-smoth-scrolling -->
 
-	  <script src="<c:url value="/resource/js/bootstrap.js" />">
+	  <script src="<c:url value="/resource/js/bootstrap.js" />"> </script>
 	<!-- js file -->
-</body>
+ </body>
 
 </html>

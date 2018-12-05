@@ -3946,7 +3946,7 @@ tbody.collapse.show {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 1rem 0rem;
 }
 
 .navbar > .container,
@@ -4016,6 +4016,7 @@ tbody.collapse.show {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #333;
 }
 
 .navbar-toggler {
@@ -8438,15 +8439,31 @@ button.bg-dark:focus {
   
   /*section background image*/
   section.bg_soju{
-    background-image: url(../images/soju_banner.jpg); 
+    background-image: url(../images/bg_soju.jpg); 
+  } 
+  section.bg_makuly{
+    background-image: url(../images/bg_makuly.jpg); 
   } 
   section.bg_beer{
-    background-image: url(../images/beer_banner.jpg);
+    background-image: url(../images/bg_beer.jpg);
   }
-  section.bg_mak{
-    background-image: url(../images/beer_banner.jpg); 
-  } 
+  section.bg_whiskey{
+    background-image: url(../images/bg_whiskey.jpg);
+  }
+  section.bg_vodka{
+    background-image: url(../images/bg_vodka.jpg);
+  }
+  section.bg_wine{
+    background-image: url(../images/bg_wine.jpg);
+  }
+  section.bg_etc{
+    background-image: url(../images/bg_beer.jpg);
+  }
+
    /*--section background image*/
+  
+
+
   .pr-lg-5,
   .px-lg-5 {
     padding-right: 3rem !important;
