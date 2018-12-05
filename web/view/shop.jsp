@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 	<div class="banner-top container-fluid" id="home">
 		<!-- header -->
-		<header class="bg_beer">
+		<header class="${sec }">
 			<div class="row">
 				<div class="col-md-3 top-info text-left mt-lg-4">
 					<!-- <h6>Need Help</h6>
@@ -133,8 +133,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="login p-5 bg-dark mx-auto mw-100">
 								<form action="#" method="post">
 									<div class="form-group">
-										<label class="mb-2">Email address</label>
-										<input type="text" class="form-control" id="exampleInputId" name="id" aria-describedby="idHelp" placeholder="" required="">
+										<label class="mb-2">ID</label>
+										<input type="text" class="form-control" id="exampleInputId" name="user_id" aria-describedby="idHelp" placeholder="" required="">
 										<small id="emailHelp" class="form-text text-muted">아이디를 입력해 주세요.</small>
 									</div>
 									<div class="form-group">
@@ -210,14 +210,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">소주</a>
+							<a class="nav-link" href="shop.alc?sec=bg_soju">소주</a>
 						</li>						
 						<li class="nav-item">
 							<a class="nav-link" href="#">막걸리</a>
 						</li>
 						<li class="nav-item active">
-							<a class="nav-link" href="#">맥주
-								<span class="sr-only">(current)</span>
+							<a class="nav-link" href="shop.alc?sec=bg_beer">맥주
+								<!-- <span class="sr-only">(current)</span> -->
 							</a>
 						</li>
 						<li class="nav-item">
@@ -760,6 +760,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 			$('.overlay-close1').on('click', function () {
 				$(".overlay-login").fadeToggle(200);
+				$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+				open = false;
+			});
+			$('.button-signup').on('click', function() {
+				$(".overlay-login").fadeToggle(200);
+				$(".overlay-signup").fadeToggle(200);
+			})
+			$('.overlay-close2').on('click', function () {
+				$(".overlay-signup").fadeToggle(200);
 				$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
 				open = false;
 			});

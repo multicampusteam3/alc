@@ -79,13 +79,13 @@ public class ProductController {
 		
 		if(sec.equals("bg_soju")) {
 			k = 20;
-		}else if(sec == "bg_beer") {
+		}else if(sec.equals("bg_beer")) {
 			k = 10;
 		}
 		try {
 			
 			list = biz.getsec(k);
-			System.out.println(k +" "+ list);
+//			System.out.println(k +" "+ list);
 			mav.addObject("plist",list);
 			mav.addObject("sec", sec);
 			mav.addObject("center", "product/category_list");
@@ -99,12 +99,22 @@ public class ProductController {
 	public ModelAndView pdetail(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		int pid = Integer.parseInt(request.getParameter("pid"));
+		String sec = null;
 		mav.setViewName("shop");
 		try {
 			Product product = (Product) biz.get(pid);
-			System.out.println(product);
-			mav.addObject("center", "single");
+			switch (product.getP_code()) {
+			case 10:
+				sec = "bg_beer";
+				break;
+			case 20:
+				sec = "bg_soju";
+				break;
+			};
+//			System.out.println(product);
+			mav.addObject("center", "product/single");
 			mav.addObject("prd", product);
+			mav.addObject("sec", sec);
 		} catch (Exception e) {
 			System.out.println("½ÇÆÐ");
 			e.printStackTrace();

@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!--/shop-->
-		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 bg_beer">
+		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 ${sec }">
 			<div>
 			<div>
 			<div class="container">
@@ -26,7 +26,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-lg-8 single-right-left simpleCart_shelfItem bg_soju">
+								<div class="col-lg-8 single-right-left simpleCart_shelfItem ${sec }">
 									<h3>${prd.pname }</h3>
 									<p><span class="item_price">${prd.unit_price }</span>
 										<!-- <del>$1,199</del> -->
@@ -95,12 +95,12 @@
 								<!--/tabs-->
 								<div class="responsive_tabs">
 									<div id="horizontalTab">
-										<ul class="resp-tabs-list bg_soju">
+										<ul class="resp-tabs-list ${sec }">
 											<li>Description</li>
 											<li>Reviews</li>
 											<li>Information</li>
 										</ul>
-										<div class="resp-tabs-container bg_soju">
+										<div class="resp-tabs-container ${sec }">
 											<!--/tab_one-->
 											<div class="tab1">
 					

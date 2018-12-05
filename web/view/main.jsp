@@ -149,7 +149,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<form action="register.alc" method="post">
 									<div class="form-group">
 										<label class="mb-2">ID</label>
-										<input type="text" class="form-control" id="exampleInputId" name="id" aria-describedby="idHelp" placeholder="" required="">
+										<input type="text" class="form-control" id="exampleInputId" name="user_id" aria-describedby="idHelp" placeholder="" required="">
 										<small id="emailHelp" class="form-text text-muted">아이디를 입력해 주세요.</small>
 									</div>
 									<div class="form-group">

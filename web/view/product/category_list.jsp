@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 </head> -->
 		<!--/shop-->
-		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 bg_beer">
+		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 ${sec }">
 			<div class="container-fluid">
 				<div class="inner-sec-shop px-lg-4 px-3">
 					<!-- <h3 class="tittle-w3layouts my-lg-4 mt-3">Every Beer</h3> -->
@@ -25,7 +25,7 @@
 							</div>
 							<!-- price range -->
 							<div class="range">
-								<h3 class="agileits-sear-head">Price range</h3>
+								<h3 class="agileits-sear-head">Price range </h3>
 								<ul class="dropdown-menu6">
 									<li>
 
@@ -144,12 +144,12 @@
 						<!-- //product left -->
 						<!--/product right-->
 						<div class="left-ads-display col-lg-9">
-							<div class="wrapper_top_shop bg_beer">
+							<div class="wrapper_top_shop ${sec }">
 								
 								<div class="row">
 	<c:forEach var="p" items="${plist }">
 		<div class="col-md-3 product-men women_two shop-gd">
-			<div class="product-googles-info googles">
+			<div class="product-googles-info ${sec }">
 				<div class="men-pro-item">
 					<div class="men-thumb-item">
 						<img src="<c:url value="/resource/images/${p.p_imgname }" />"

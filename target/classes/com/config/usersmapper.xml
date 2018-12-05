@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM USERS
 	</select>
 	<insert id="insert" parameterType="Users">
-		INSERT INTO USERS VALUES (#{id},#{pw},#{name},#{address},sysdate)
+		INSERT INTO USERS VALUES (#{user_id},#{pw},#{name},#{address},sysdate)
 	</insert>
 	<update id="update" parameterType="Users">
 		UPDATE USERS SET PW=#{pw},NAME=#{name},ADDRESS=#{address} WHERE USER_ID=#{user_id}
