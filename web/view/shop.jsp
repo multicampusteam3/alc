@@ -728,7 +728,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<!-- //footer -->
 
 		<!--jQuery-->
-		<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />">
+		<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />"> 
 		<!-- newsletter modal -->
 		<!--search jQuery-->
 		<script src="<c:url value="/resource/js/modernizr-2.6.2.min.js" />"> </script>
@@ -938,6 +938,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			$('.close3').on('click', function (c) {
 				$('.rem3').fadeOut('slow', function (c) {
 					$('.rem3').remove();
+				});
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function (c) {
+			$('.close4').on('click', function (c) {
+				$('.rem4').fadeOut('slow', function (c) {
+					$('.rem4').remove();
+				});
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function (c) {
+			$('.close5').on('click', function (c) {
+				$('.rem5').fadeOut('slow', function (c) {
+					$('.rem5').remove();
 				});
 			});
 		});

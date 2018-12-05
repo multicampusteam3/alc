@@ -56,7 +56,8 @@ public class CartController  {
 	@RequestMapping("cartdelete.alc")
 	public ModelAndView cartdel(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
-		int cid = Integer.parseInt(request.getParameter("cid"));
+		String cid = request.getParameter("cid");
+		System.out.println(cid);
 		mav.setViewName("redirect:cartdisplay.alc");
 		try {
 			biz.remove(cid);

@@ -1,6 +1,7 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <head>
 	<title>Goggles Ecommerce Category Bootstrap responsive Web Template | Checkout :: w3layouts</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,8 +36,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="inner-sec-shop px-lg-4 px-3">
 				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
 				<div class="checkout-right">
-					<h4>Your shopping cart contains:
-						<span> Products</span>
+					<h4>고객님의 장바구니엔 ${fn:length(cartlist) }개의 상품이 담겨 있습니다.
 					</h4>
 					<table class="timetable_sub">
 						<thead>
@@ -70,11 +70,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										</div>
 									</div>
 								</td>
-								<td class="invert">${p.pname } </td>
+								<td class="invert">${p.pname }</td>
 								<td class="invert">${p.price }</td>
 								<td class="invert">
 									<div class="rem">
-										<div class="close${status.count }"><a href="cartdelete.alc?cid=${p.cid }"></a> </div>
+										<a href="cartdelete.alc?cid=${p.cid }"><div class="close${status.count }"></div></a> 
 									</div>
 
 								</td>
@@ -88,30 +88,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-12 checkout-left-basket">
 						<h4>Continue to basket</h4>
 						<ul>
-							<li>Product1
+						<c:forEach var="p" items="${cartlist }" varStatus="status">
+							<li>${p.pname }
 								<i>-</i>
-								<span>$281.00 </span>
+								<span id="sumprice${status.count }" val="${p.qt * p.price }">${p.qt * p.price } </span>
 							</li>
-							<li>Product2
+						</c:forEach>
+							
+							<li>합계
 								<i>-</i>
-								<span>$325.00 </span>
-							</li>
-							<li>Product3
-								<i>-</i>
-								<span>$325.00 </span>
-							</li>
-							<li>Total Service Charges
-								<i>-</i>
-								<span>$55.00</span>
-							</li>
-							<li>Total
-								<i>-</i>
-								<span>$986.00</span>
+								<span></span>
 							</li>
 						</ul>
 					</div>
 					<div class="checkout-right-basket">
-						<a href="payment.html">Make a Payment </a>
+						<a href="payment.alc">결제 진행하기 </a>
 					</div>
 
 					<div class="clearfix"> </div>
@@ -122,6 +113,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		</div>
 	</section>
+	<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />"> </script>
+		<script >
+		$(document).ready(function(){
+			var price = $('span[id^=sumprice]');
+			var total= 0;
+			alert(price);
+			$(price).each(function(index,element){
+			    total = element.val() + total;
+			    
+			});
+			document.body.innerHTML = txt;
+		});
+		</script>
+		<script>
+		
+		$(document).ready(function () {
+			$(".button-log a").click(function () {
+				$(".overlay-login").fadeToggle(200);
+				$(this).toggleClass('btn-open').toggleClass('btn-close');
+			});
+		});
+		$('.overlay-close1').on('click', function () {
+			$(".overlay-login").fadeToggle(200);
+			$(".button-log a").toggleClass('btn-open').toggleClass('btn-close');
+			open = false;
+		});
+	</script>
 	<!--//checkout-->
 <%-- 	
 		<!--jQuery-->
