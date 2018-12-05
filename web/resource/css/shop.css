@@ -609,13 +609,27 @@ ul.stars li a i:hover {
 	/*border: 1px solid #e4e4e4;*/
 	/*background: #f6b974;*/
 }
-.product-googles-info.bg_beer{
-	background: #f6b974;	
-}
+
+
+/*product border*/
 .product-googles-info.bg_soju{
 	background: #012a05c9;
 }
-
+.product-googles-info.bg_makuly{
+	background: #c2af9aed;
+}
+.product-googles-info.bg_beer{
+	background: #f6b974;	
+}
+.product-googles-info.bg_whiskey{
+	background: #4f2500c9;
+}
+.product-googles-info.bg_vodka{
+	background: #b7badbc9;
+}
+.product-googles-info.bg_wine{
+	background: #2f0436c9;
+}
 /*-- //effect on products --*/
 
 /*-- product left --*/
@@ -949,10 +963,25 @@ input.checked {
 .wrapper_top_shop.bg_soju{
 	background: #2c1b0247;
 }
-
+.wrapper_top_shop.bg_makuly{
+	background: #887a4b36;
+}
 .wrapper_top_shop.bg_beer{
 	background: #fd9a0047;
 }
+.wrapper_top_shop.bg_whiskey{
+	background: #2c1807d6;
+}
+.wrapper_top_shop.bg_vodka{
+	background: #b875d352;
+}
+.wrapper_top_shop.bg_wine{
+	background: #6756713d;
+}
+.wrapper_top_shop.bg_etc{
+	background: #fd9a0047;
+}
+
 
 
 /*-- //special deals --*/

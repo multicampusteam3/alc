@@ -15,7 +15,7 @@ import com.vo.Cart;
 import com.vo.Users;
 
 @Controller
-public class CartController {
+public class CartController  {
 	
 	@Resource(name="cbiz")
 	Biz biz;
