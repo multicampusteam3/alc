@@ -3,23 +3,23 @@ package com.vo;
 import java.util.Date;
 
 public class Cart {
-	int cid;
 	String user_id;
 	int pid;
+	String pname;
 	int qt;
 	int price;
+	int cid;
 	Date c_date;
 	
 	public Cart() {}
 	
-	
-	public Cart(String user_id, int pid, int qt, int price) {
+	public Cart(String user_id, int pid, String pname, int qt, int price) {
 		this.user_id = user_id;
 		this.pid = pid;
+		this.pname = pname;
 		this.qt = qt;
 		this.price = price;
 	}
-
 
 	public Cart(int cid, String user_id, int pid, int qt, int price, Date c_date) {
 		this.cid = cid;
@@ -78,10 +78,22 @@ public class Cart {
 		this.c_date = c_date;
 	}
 
+
+	public String getPname() {
+		return pname;
+	}
+
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
 	@Override
 	public String toString() {
-		return "Cart [cid=" + cid + ", user_id=" + user_id + ", pid=" + pid + ", qt=" + qt + ", price=" + price
-				+ ", c_date=" + c_date + "]";
+		return "Cart [user_id=" + user_id + ", pid=" + pid + ", pname=" + pname + ", qt=" + qt + ", price=" + price
+				+ ", cid=" + cid + ", c_date=" + c_date + "]";
 	}
+
+	
 	
 }

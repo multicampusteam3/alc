@@ -31,6 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/style6.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/shop.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/easy-responsive-tabs.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/owl.theme.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/style.css">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/fontawesome-all.css">
@@ -82,7 +83,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</a>
 						</li>
 						<li class="galssescart galssescart2 cart cart box_1">
-							<form action="#" method="post" class="last">
+							<form action="cartdisplay.alc" method="post" class="last">
 								<input type="hidden" name="cmd" value="_cart">
 								<input type="hidden" name="display" value="1">
 								<button class="top_googles_cart" type="submit" name="submit" value="">
@@ -599,8 +600,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 											</div>
 						
 								</div>
-								
-								 -->
+											 -->
 				<c:choose>
 					<c:when test="${center !=null }">
 						<jsp:include page="${center }.jsp"/>
@@ -731,9 +731,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />">
 		<!-- newsletter modal -->
 		<!--search jQuery-->
-		<script src="<c:url value="/resource/js/modernizr-2.6.2.min.js" />">
-		<script src="<c:url value="/resource/js/classie-search.js" />">
-		<script src="<c:url value="/resource/js/demo1-search.js" />">
+		<script src="<c:url value="/resource/js/modernizr-2.6.2.min.js" />"> </script>
+		<script src="<c:url value="/resource/js/classie-search.js" />"> </script>
+		<script src="<c:url value="/resource/js/demo1-search.js" />"> </script>
 		<!--//search jQuery-->
 		<!-- cart-js -->
 		<script src="<c:url value="/resource/js/minicart.js" />">
@@ -775,7 +775,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 		<!-- carousel -->
 		<!-- price range (top products) -->
-		<script src="<c:url value="/resource/js/jquery-ui.js" />">
+		<script src="<c:url value="/resource/js/jquery-ui.js" />"> </script>
 		<script>
 			//<![CDATA[ 
 			$(window).load(function () {
@@ -794,7 +794,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</script>
 		<!-- //price range (top products) -->
 
-		<script src="<c:url value="/resource/js/owl.carousel.js" />">
+		<script src="<c:url value="/resource/js/owl.carousel.js" />"> </script>
 		<script>
 			$(document).ready(function () {
 				$('.owl-carousel').owlCarousel({
@@ -844,8 +844,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			});
 		</script>
 		<!-- //dropdown nav -->
-		<script src="<c:url value="/resource/js/move-top.js" />">
-		<script src="<c:url value="/resource/js/easing.js" />">
+		<script src="<c:url value="/resource/js/move-top.js" />"> </script>
+		<script src="<c:url value="/resource/js/easing.js" />"> </script>
     <script>
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event) {
@@ -874,8 +874,78 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!--// end-smoth-scrolling -->
+	
+	<!-- easy-responsive-tabs -->
+	<script src="<c:url value="/resource/js/easy-responsive-tabs.js" />"> </script>
+	<script>
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
+				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
+			});
+		});
+	</script>
+	<!--quantity-->
+	<script>
+		$('.value-plus').on('click', function () {
+			var divUpd = $(this).parent().find('.value'),
+				newVal = parseInt(divUpd.text(), 10) + 1;
+			divUpd.text(newVal);
+		});
 
-		<<script src="<c:url value="/resource/js/bootstrap.js" />">
+		$('.value-minus').on('click', function () {
+			var divUpd = $(this).parent().find('.value'),
+				newVal = parseInt(divUpd.text(), 10) - 1;
+			if (newVal >= 1) divUpd.text(newVal);
+		});
+	</script>
+	<!--quantity-->
+	<!--close-->
+	<script>
+		$(document).ready(function (c) {
+			$('.close1').on('click', function (c) {
+				$('.rem1').fadeOut('slow', function (c) {
+					$('.rem1').remove();
+				});
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function (c) {
+			$('.close2').on('click', function (c) {
+				$('.rem2').fadeOut('slow', function (c) {
+					$('.rem2').remove();
+				});
+			});
+		});
+	</script>
+	<script>
+		$(document).ready(function (c) {
+			$('.close3').on('click', function (c) {
+				$('.rem3').fadeOut('slow', function (c) {
+					$('.rem3').remove();
+				});
+			});
+		});
+	</script>
+	<!--//close-->
+	
+	
+		<<script src="<c:url value="/resource/js/bootstrap.js" />"> </script>
 		<!-- js file -->
 </body>
 

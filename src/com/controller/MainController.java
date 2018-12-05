@@ -51,7 +51,6 @@ public class MainController {
 	public ModelAndView registerimpl(Users user, HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("main");
-		System.out.println(user + " qqq" );
 		try {
 			biz.register(user);
 			session.setAttribute("login_user", user);

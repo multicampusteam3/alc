@@ -9,7 +9,7 @@ import com.frame.Dao;
 import com.mapper.CartMapper;
 import com.vo.Cart;
 @Repository("cdao")
-public class CartDao implements Dao<Integer, Cart> {
+public class CartDao implements Dao<String, Cart> {
 	
 	@Autowired
 	CartMapper cm;
@@ -20,7 +20,7 @@ public class CartDao implements Dao<Integer, Cart> {
 	}
 
 	@Override
-	public void delete(Integer k) {
+	public void delete(String k) {
 		cm.delete(k);
 	}
 
@@ -30,7 +30,7 @@ public class CartDao implements Dao<Integer, Cart> {
 	}
 
 	@Override
-	public Cart select(Integer k) {
+	public Cart select(String k) {
 		return cm.select(k);
 	}
 
@@ -40,9 +40,8 @@ public class CartDao implements Dao<Integer, Cart> {
 	}
 
 	@Override
-	public ArrayList<Cart> selectsec(Integer k) {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Cart> selectsec(String k) {
+		return cm.selectsec(k);
 	}
 
 }

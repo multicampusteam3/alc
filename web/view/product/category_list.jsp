@@ -192,7 +192,8 @@
 									</a></li>
 								</ul> -->
 							</div>
-							<div class="googles single-item hvr-outline-out">
+							<!--cart-->
+							<%-- <div class="googles single-item hvr-outline-out">
 								<form action="addcart.alc" method="post">
 									<!-- <input type="hidden" name="cmd" value="_cart">  -->
 									<!-- <input type="hidden" name="add" value="1"> -->
@@ -203,10 +204,9 @@
 									<button type="submit" class="googles-cart pgoogles-cart">
 										<i class="fas fa-cart-plus"></i>
 									</button>
-
 								</form>
-
-							</div>
+							</div> --%>
+							<!--cart-->
 						</div>
 						<div class="clearfix"></div>
 					</div>

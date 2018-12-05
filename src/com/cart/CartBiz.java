@@ -11,9 +11,9 @@ import com.frame.Dao;
 import com.vo.Cart;
 
 @Service("cbiz")
-public class CartBiz implements Biz<Integer, Cart> {
+public class CartBiz implements Biz<String, Cart> {
 	@Resource(name="cdao")
-	Dao<Integer,Cart> dao;
+	Dao<String,Cart> dao;
 	
 	@Override
 	public void register(Cart v) throws Exception {
@@ -21,7 +21,7 @@ public class CartBiz implements Biz<Integer, Cart> {
 	}
 
 	@Override
-	public void remove(Integer k) throws Exception {
+	public void remove(String k) throws Exception {
 		dao.delete(k);
 	}
 
@@ -31,7 +31,7 @@ public class CartBiz implements Biz<Integer, Cart> {
 	}
 
 	@Override
-	public Cart get(Integer k) throws Exception {
+	public Cart get(String k) throws Exception {
 		return (Cart) dao.select(k);
 	}
 
@@ -41,9 +41,8 @@ public class CartBiz implements Biz<Integer, Cart> {
 	}
 
 	@Override
-	public ArrayList<Cart> getsec(Integer k) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Cart> getsec(String k) throws Exception {
+		return dao.selectsec(k);
 	}
 
 }

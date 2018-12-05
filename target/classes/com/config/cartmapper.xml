@@ -4,19 +4,23 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mapper.CartMapper">
 	
-	<select id="select" parameterType="INTEGER" resultType="cart">
-		SELECT * FROM CART WHERE CID=#{obj}
+	<select id="select" parameterType="String" resultType="cart">
+		SELECT * FROM CART WHERE USER_ID=#{obj}
 	</select>
+	<select id="selectsec" parameterType="String" resultType="cart">
+		SELECT * FROM CART WHERE USER_ID=#{obj}
+	</select>
+	
 	<select id="selectall" resultType="cart">
-		SELECT * FROM CART
+		SELECT * FROM CART WHERE 
 	</select>
 	<insert id="insert" parameterType="cart">
-		INSERT INTO CART VALUES (CID_SEQ.NEXTVAL,#{user_id},#{pid},#{qt},#{price},sysdate)
+		INSERT INTO CART VALUES (#{user_id},#{pid},#{pname},#{qt},#{price},CID_SEQ.NEXTVAL,sysdate)
 	</insert>
 	<update id="update" parameterType="cart">
 		UPDATE CART SET QT=#{qt},PRICE=#{price} WHERE CID=#{cid}
 	</update>
-	<delete id="delete" parameterType="INTEGER">
+	<delete id="delete" parameterType="String">
 		DELETE FROM CART WHERE CID=#{obj}
 	</delete>
 	

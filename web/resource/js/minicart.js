@@ -1903,7 +1903,7 @@ var defaults = module.exports = {
 
     parent: (typeof document !== 'undefined') ? document.body : null,
 
-    action: 'checkout.html',
+    action: 'cartdisplay.alc',
 
     target: '',
 
@@ -1917,7 +1917,7 @@ var defaults = module.exports = {
         button: 'Check Out',
         subtotal: 'Subtotal:',
         discount: 'Discount:',
-        empty: 'Your shopping cart is empty'
+        empty: '쇼핑카트가 비어있습니다.'
     }
 
 };

@@ -1,6 +1,10 @@
 package com.controller;
 
+import java.util.ArrayList;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.frame.Biz;
 import com.vo.Cart;
+import com.vo.Users;
 
 @Controller
 public class CartController {
@@ -20,12 +25,43 @@ public class CartController {
 		ModelAndView mav = new ModelAndView();
 		System.out.println(cart);
 		
-		mav.setViewName("redirect:main.alc");
+		mav.setViewName("redirect:cartdisplay.alc");
 		try {
 			biz.register(cart);
 			System.out.println("카트 담김");
+			mav.addObject("center", "checkout");
 		} catch (Exception e) {
 			System.out.println("확인좀 잘좀");
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	@RequestMapping("cartdisplay.alc")
+	public ModelAndView cartdisplay(HttpSession session) {
+		ModelAndView mav = new ModelAndView();
+		ArrayList<Cart> list = null;
+		Users user = (Users) session.getAttribute("login_user");
+		mav.setViewName("shop");
+		try {
+			list = biz.getsec(user.getUser_id());
+			mav.addObject("center", "checkout");
+			mav.addObject("cartlist", list);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	@RequestMapping("cartdelete.alc")
+	public ModelAndView cartdel(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		int cid = Integer.parseInt(request.getParameter("cid"));
+		mav.setViewName("redirect:cartdisplay.alc");
+		try {
+			biz.remove(cid);
+			
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return mav;

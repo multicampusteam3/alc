@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!--/shop-->
 		<section class="banner-bottom-wthreelayouts py-lg-5 py-3 ${sec }">
 			<div>
@@ -37,9 +38,9 @@
 									<br>
 									<br>
 									<br>
-									<form action="#" method="post">
+									<form action="addcart.alc" method="post">
 											<label class="mb-2">수량 : </label>
-											<input type="number">
+											<input type="number" name="qt">
 											
 									<br>
 									<hr>		
@@ -48,8 +49,10 @@
 
 														<input type="hidden" name="cmd" value="_cart">
 														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="googles_item" value="${prd.pname }">
-														<input type="hidden" name="amount" value="${prd.unit_price }원">
+														<input type="hidden" name="user_id" value="${login_user.user_id }">
+														<input type="hidden" name="pid" value="${prd.pid }">
+														<input type="hidden" name="pname" value="${prd.pname }">
+														<input type="hidden" name="price" value="${prd.unit_price }">
 														<button type="submit" class="googles-cart pgoogles-cart">
 															장바구니 담기
 														</button>
@@ -60,36 +63,6 @@
 												</div>
 									</div>
 									
-									<!-- <ul class="footer-social text-left mt-lg-4 mt-3">
-											<li>Share On : </li>
-											<li class="mx-2">
-												<a href="#">
-													<span class="fab fa-facebook-f"></span>
-												</a>
-											</li>
-											<li class="mx-2">
-												<a href="#">
-													<span class="fab fa-twitter"></span>
-												</a>
-											</li>
-											<li class="mx-2">
-												<a href="#">
-													<span class="fab fa-google-plus-g"></span>
-												</a>
-											</li>
-											<li class="mx-2">
-												<a href="#">
-													<span class="fab fa-linkedin-in"></span>
-												</a>
-											</li>
-											<li class="mx-2">
-												<a href="#">
-													<span class="fas fa-rss"></span>
-												</a>
-											</li>
-											
-										</ul> -->
-			
 								</div>
 								<div class="clearfix"> </div>
 								<!--/tabs-->
@@ -177,4 +150,4 @@
 					<!--//slider-->
 				</div>
 		</section>
-		
+	

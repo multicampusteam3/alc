@@ -75,8 +75,6 @@ public class ProductController {
 		ArrayList<Product> list = null;
 		mav.setViewName("shop");
 		String sec = (String) req.getParameter("sec");
-		System.out.println(sec);
-		
 		if(sec.equals("bg_soju")) {
 			k = 20;
 		}else if(sec.equals("bg_beer")) {
