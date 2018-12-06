@@ -10,6 +10,6 @@ import com.vo.Users;
 @Controller
 public class UsersController {
 	@Resource(name="ubiz")
-	Biz<Integer,Users> biz;
+	Biz biz;
 	
 }

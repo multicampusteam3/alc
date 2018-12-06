@@ -34,6 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container">
 			<div class="inner-sec-shop px-lg-4 px-3">
+			<form action="order.alc" method="post">
 				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
 				<div class="checkout-right">
 					<h4>고객님의 장바구니엔 ${fn:length(cartlist) }개의 상품이 담겨 있습니다.
@@ -50,8 +51,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<th>Remove</th>
 							</tr>
 						</thead>
+					
 						<tbody>
+						
 						<c:forEach var="p" items="${cartlist }" varStatus="status">
+							<input type="hidden" name="pid" value="${p.pid }">
+							<%-- <input type="hidden" name="pname" value="${p.pname }"> --%>
+							<input type="hidden" name="cid" value="${p.cid }">
+							<input type="hidden" name="price" value="${p.price }">
+							<input type="hidden" name="amount" value="15000">
+							<input type="hidden" name="price" value="${p.price }">
+							<input type="hidden" name="qt" value="${p.qt }">
 							<tr class="rem${status.count }">
 								<td class="invert">${status.count }</td>
 								<td class="invert-image">
@@ -83,6 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							
 						</tbody>
 					</table>
+					<input type="hidden" name="user_id" value="${login_user.user_id }">
 				</div>
 				<div class="checkout-left row">
 					<div class="col-md-12 checkout-left-basket">
@@ -94,7 +105,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span id="sumprice${status.count }" val="${p.qt * p.price }">${p.qt * p.price } </span>
 							</li>
 						</c:forEach>
-							
+					
 							<li>합계
 								<i>-</i>
 								<span></span>
@@ -102,13 +113,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 					</div>
 					<div class="checkout-right-basket">
-						<a href="payment.alc">결제 진행하기 </a>
+						<a href="orderdetail.alc">결제 진행하기 </a>
+						<button type="submit" class="googles-cart pgoogles-cart">
+																결제 진행
+						</button>
 					</div>
-
+			
 					<div class="clearfix"> </div>
 
 				</div>
-
+			</form>
 			</div>
 
 		</div>
@@ -118,7 +132,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		$(document).ready(function(){
 			var price = $('span[id^=sumprice]');
 			var total= 0;
-			alert(price);
+			
 			$(price).each(function(index,element){
 			    total = element.val() + total;
 			    

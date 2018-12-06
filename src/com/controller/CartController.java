@@ -57,13 +57,27 @@ public class CartController  {
 	public ModelAndView cartdel(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		String cid = request.getParameter("cid");
-		System.out.println(cid);
 		mav.setViewName("redirect:cartdisplay.alc");
 		try {
 			biz.remove(cid);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	@RequestMapping("orderconfirmcartdel.alc")
+	public ModelAndView orderconfirm(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		String[] cid = request.getParameterValues("cid");
+		mav.setViewName("order");
+		for (int i = 0; i < cid.length; i++) {
+			try {
+				biz.remove(cid[i]);
+			} catch (Exception e) {
+				System.out.println("삭제실패!");
+				e.printStackTrace();
+			}
 		}
 		return mav;
 	}

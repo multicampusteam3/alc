@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrdersMapper">
+	
+	<select id="select" parameterType="String" resultType="order">
+		SELECT * FROM ORDERS WHERE USER_ID=#{obj}
+	</select>
+	<select id="selectsec" parameterType="String" resultType="order">
+		SELECT * FROM ORDERS WHERE USER_ID=#{obj}
+	</select>
+	
+	<select id="selectall" resultType="order">
+		SELECT * FROM ORDERS  
+	</select>
+	<insert id="insert" parameterType="order">
+		INSERT INTO ORDERS VALUES (OID_SEQ.NEXTVAL,sysdate,#{user_id},#{amount},'y','y','n')
+	</insert>
+	<update id="update" parameterType="order">
+		UPDATE ORDERS SET PMT_STATUS=#{pmt_status},DELI_STATUS=#{deli_status} WHERE OID=#{cid}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM ORDERS WHERE OID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+

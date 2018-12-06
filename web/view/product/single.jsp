@@ -39,29 +39,40 @@
 									<br>
 									<br>
 									<form action="addcart.alc" method="post">
-											<label class="mb-2">수량 : </label>
-											<input type="number" name="qt">
-											
-									<br>
-									<hr>		
-									<div class="occasion-cart">
-											<div class="googles single-item singlepage">
-
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="user_id" value="${login_user.user_id }">
-														<input type="hidden" name="pid" value="${prd.pid }">
-														<input type="hidden" name="pname" value="${prd.pname }">
-														<input type="hidden" name="price" value="${prd.unit_price }">
-														<button type="submit" class="googles-cart pgoogles-cart">
-															장바구니 담기
-														</button>
-											</div>
-									</div>
-													</form>
-									
+												<label class="mb-2">수량 : </label>
+												<input type="number" name="qt">
+												
+										<br>
+										<hr>		
+										<div class="occasion-cart">
+												<div class="googles single-item singlepage">
+	
+															<input type="hidden" name="cmd" value="_cart">
+															<input type="hidden" name="add" value="1">
+															<input type="hidden" name="user_id" value="${login_user.user_id }">
+															<input type="hidden" name="pid" value="${prd.pid }">
+															<input type="hidden" name="pname" value="${prd.pname }">
+															<input type="hidden" name="price" value="${prd.unit_price }">
+															<button type="submit" class="googles-cart pgoogles-cart">
+																장바구니 담기
+															</button>
 												</div>
-									</div>
+										</div>
+									</form>
+									
+									<form action="order.alc" method="post">
+													<input type="hidden" name="qt" value="1">
+													<input type="hidden" name="user_id" value="${login_user.user_id }">
+													<input type="hidden" name="pid" value="${prd.pid }">
+													<input type="hidden" name="pname" value="${prd.pname }">
+													<input type="hidden" name="price" value="${prd.unit_price }">
+													<button type="submit" class="googles-cart pgoogles-cart">
+														바로구매하기
+													</button>
+									</form>
+									
+								</div>
+					</div>
 									
 								</div>
 								<div class="clearfix"> </div>

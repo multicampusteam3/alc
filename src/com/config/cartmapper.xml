@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="selectall" resultType="cart">
-		SELECT * FROM CART WHERE 
+		SELECT * FROM CART
 	</select>
 	<insert id="insert" parameterType="cart">
 		INSERT INTO CART VALUES (#{user_id},#{pid},#{pname},#{qt},#{price},CID_SEQ.NEXTVAL,sysdate)

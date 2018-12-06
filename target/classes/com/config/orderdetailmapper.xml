@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrderdetailMapper">
+	
+	<select id="select" parameterType="String" resultType="orderdetail">
+		SELECT * FROM ORDER_DETAIL WHERE OID=#{obj}
+	</select>
+	<select id="selectsec" parameterType="String" resultType="orderdetail">
+		SELECT * FROM ORDER_DETAIL WHERE OID=#{obj}
+	</select>
+	
+	<select id="selectall" resultType="orderdetail">
+		SELECT * FROM ORDER_DETAIL  
+	</select>
+	<insert id="insert" parameterType="orderdetail">
+		INSERT INTO ORDER_DETAIL VALUES (ODID_SEQ.NEXTVAL,#{pid},(SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'OID_SEQ')-1,#{qt},#{price})
+	</insert>
+	<update id="update" parameterType="orderdetail">
+		UPDATE ORDER_DETAIL SET QT=#{qt},PRICE=#{price} WHERE CID=#{cid}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM ORDER_DETAIL WHERE OID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
