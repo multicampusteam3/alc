@@ -12,7 +12,7 @@
 			<div class="product-googles-info googles">
 				<div class="men-pro-item">
 					<div class="men-thumb-item">
-						<img src="<c:url value="/resource/images/${p.p_imgname }" />"
+						<img src="<c:url value="/resource/images/alcimgs/${p.p_imgname }" />"
 							class="img-fluid" alt="">
 						<div class="men-cart-pro">
 							<div class="inner-men-cart-pro">

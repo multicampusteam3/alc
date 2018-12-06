@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 						<c:forEach var="p" items="${cartlist }" varStatus="status">
 							<input type="hidden" name="pid" value="${p.pid }">
-							<%-- <input type="hidden" name="pname" value="${p.pname }"> --%>
+							<input type="hidden" name="pname" value="${p.pname }">
 							<input type="hidden" name="cid" value="${p.cid }">
 							<input type="hidden" name="price" value="${p.price }">
 							<input type="hidden" name="amount" value="15000">
@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<td class="invert">${status.count }</td>
 								<td class="invert-image">
 									<a href="pdetail.alc?pid=${p.pid }">
-										<img src="images/s1.jpg" alt=" " class="img-responsive">
+										<img src="resource/images/alcimgs/soju_hite.jpg" alt=" " class="img-responsive">
 									</a>
 								</td>
 								<td class="invert">
@@ -115,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="checkout-right-basket">
 						<a href="orderdetail.alc">결제 진행하기 </a>
 						<button type="submit" class="googles-cart pgoogles-cart">
-																결제 진행
+							결제 진행
 						</button>
 					</div>
 			

@@ -42,7 +42,6 @@ public class ProductController {
 			FileOutputStream out = new FileOutputStream("c:/spring/alcohol/web/img/" + img);
 			out.write(data);
 			out.close();
-			
 			biz.register(prd);
 			mav.addObject("center","product/registerok");
 		} catch (Exception e) {
@@ -76,9 +75,19 @@ public class ProductController {
 		mav.setViewName("shop");
 		String sec = (String) req.getParameter("sec");
 		if(sec.equals("bg_soju")) {
-			k = 20;
+			k = 100;
+		}else if(sec.equals("bg_makuly")) {
+			k = 200;
 		}else if(sec.equals("bg_beer")) {
-			k = 10;
+			k = 300;
+		}else if(sec.equals("bg_whiskey")) {
+			k = 400;
+		}else if(sec.equals("bg_vodka")) {
+			k = 500;
+		}else if(sec.equals("bg_wine")) {
+			k = 600;
+		}else if(sec.equals("bg_etc")) {
+			k = 700;
 		}
 		try {
 			
@@ -102,11 +111,23 @@ public class ProductController {
 		try {
 			Product product = (Product) biz.get(pid);
 			switch (product.getP_code()) {
-			case 10:
+			case 100:
+				sec = "bg_soju";
+				break;
+			case 200:
+				sec = "bg_makuly";
+				break;
+			case 300:
 				sec = "bg_beer";
 				break;
-			case 20:
-				sec = "bg_soju";
+			case 400:
+				sec = "bg_whiskey";
+				break;
+			case 500:
+				sec = "bg_vodka";
+				break;
+			case 600:
+				sec = "bg_wine";
 				break;
 			};
 //			System.out.println(product);

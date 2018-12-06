@@ -3,6 +3,7 @@ package com.vo;
 public class Orderdetail {
 	int odid;
 	int pid;
+	String pname;
 	int oid;
 	int qt;
 	int price;
@@ -20,6 +21,15 @@ public class Orderdetail {
 
 	public Orderdetail(int pid, int qt, int price) {
 		this.pid = pid;
+		this.qt = qt;
+		this.price = price;
+	}
+	
+	
+	public Orderdetail(int pid, String pname, int qt, int price) {
+		super();
+		this.pid = pid;
+		this.pname = pname;
 		this.qt = qt;
 		this.price = price;
 	}

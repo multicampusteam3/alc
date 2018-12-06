@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM ORDER_DETAIL  
 	</select>
 	<insert id="insert" parameterType="orderdetail">
-		INSERT INTO ORDER_DETAIL VALUES (ODID_SEQ.NEXTVAL,#{pid},(SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'OID_SEQ')-1,#{qt},#{price})
+		INSERT INTO ORDER_DETAIL VALUES (ODID_SEQ.NEXTVAL,#{pid},#{pname},(SELECT LAST_NUMBER FROM USER_SEQUENCES WHERE SEQUENCE_NAME = 'OID_SEQ')-1,#{qt},#{price})
 	</insert>
 	<update id="update" parameterType="orderdetail">
 		UPDATE ORDER_DETAIL SET QT=#{qt},PRICE=#{price} WHERE CID=#{cid}

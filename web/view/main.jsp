@@ -13,7 +13,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Goggles Ecommerce Category Bootstrap responsive Web Template | Home :: w3layouts</title>
+	<title>Alcohol Lover Companion</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -228,23 +228,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a class="nav-link" href="shop.alc?sec=bg_soju">소주</a>
 						</li>						
 						<li class="nav-item">
-							<a class="nav-link" href="#">막걸리</a>
+							<a class="nav-link" href="shop.alc?sec=bg_makuly">막걸리</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">맥주</a>
+							<a class="nav-link" href="shop.alc?sec=bg_beer">맥주</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">위스키</a>
+							<a class="nav-link" href="shop.alc?sec=bg_whiskey">위스키</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">보드카</a>
+							<a class="nav-link" href="shop.alc?sec=bg_vodka">보드카</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">와인</a>
+							<a class="nav-link" href="shop.alc?sec=bg_wine">와인</a>
 						</li>
-						<li class="nav-item">
+						<!-- <li class="nav-item">
 							<a class="nav-link" href="#">기타</a>
-						</li>																														
+						</li>	 -->																													
 <!-- 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">

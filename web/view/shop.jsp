@@ -12,7 +12,7 @@
 <html lang="zxx">
 
 <head>
-	<title>Goggles Ecommerce Category Bootstrap responsive Web Template | Shop :: w3layouts</title>
+	<title>Alcohol Lover Companion</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -210,29 +210,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a class="nav-link ml-lg-0" href="main.alc">전체
 							</a>
 						</li>
+				
+					
 						<li class="nav-item">
 							<a class="nav-link" href="shop.alc?sec=bg_soju">소주</a>
 						</li>						
 						<li class="nav-item">
-							<a class="nav-link" href="#">막걸리</a>
+							<a class="nav-link" href="shop.alc?sec=bg_makuly">막걸리</a>
 						</li>
-						<li class="nav-item active">
+						<li class="nav-item">
 							<a class="nav-link" href="shop.alc?sec=bg_beer">맥주
 								<!-- <span class="sr-only">(current)</span> -->
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">위스키</a>
+							<a class="nav-link" href="shop.alc?sec=bg_whiskey">위스키</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">보드카</a>
+							<a class="nav-link" href="shop.alc?sec=bg_vodka">보드카</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">와인</a>
+							<a class="nav-link" href="shop.alc?sec=bg_wine">와인</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">기타</a>
-						</li>																														
+						<!-- <li class="nav-item">
+							<a class="nav-link" href="shop.alc?sec=bg_etc">기타</a>
+						</li>				 -->																										
 <!-- 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
@@ -397,7 +399,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="index.html">Home</a>
 							<i>|</i>
 						</li>
-						<li>Shop</li>
+				<c:choose>
+					<c:when test="${sec =='bg_soju' }">
+						<li>소주</li>
+					</c:when>
+					<c:when test="${sec =='bg_makuly' }">
+						<li>막걸리</li>
+					</c:when>
+					<c:when test="${sec =='bg_beer' }">
+						<li>맥주</li>
+					</c:when>
+					<c:when test="${sec =='bg_whiskey' }">
+						<li>위스키</li>
+					</c:when>
+					<c:when test="${sec =='bg_vodka' }">
+						<li>보드카</li>
+					</c:when>
+					<c:when test="${sec =='bg_wine' }">
+						<li>와인</li>
+					</c:when>
+				</c:choose>
 					</ul>
 				</div>
 			</div>

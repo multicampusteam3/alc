@@ -24,11 +24,14 @@ public class OrderdetailController {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("forward:orderconfirmcartdel.alc");
 		String[] pid = request.getParameterValues("pid");
+		String[] pname = request.getParameterValues("pname");
 		String[] qt = request.getParameterValues("qt");
 		String[] price = request.getParameterValues("price");
+		
+		System.out.println(pname[0]);
 		try {
 			for (int i = 0; i < pid.length; i++) {
-				Orderdetail ord = new Orderdetail(Integer.parseInt(pid[i]), Integer.parseInt(qt[i]), Integer.parseInt(price[i]));
+				Orderdetail ord = new Orderdetail(Integer.parseInt(pid[i]), pname[i], Integer.parseInt(qt[i]), Integer.parseInt(price[i]));
 				System.out.println(ord);
 				biz.register(ord);
 			}

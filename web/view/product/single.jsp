@@ -13,8 +13,8 @@
 									<div class="grid images_3_of_2">
 										<div class="flexslider1">
 											<ul class="slides">
-												<li data-thumb="/resource/images/${prd.p_imgname }">
-													<div class="thumb-image"> <img src="resource/images/${prd.p_imgname }" data-imagezoom="true" class="img-fluid" alt=" "> </div>
+												<li data-thumb="/resource/images/alcimgs/${prd.p_imgname }">
+													<div class="thumb-image"> <img src="resource/images/alcimgs/${prd.p_imgname }" data-imagezoom="true" class="img-fluid" alt=" "> </div>
 												</li>
 												<!-- <li data-thumb="images/d1.jpg">
 													<div class="thumb-image"> <img src="images/d1.jpg" data-imagezoom="true" class="img-fluid" alt=" "> </div>
