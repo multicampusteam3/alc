@@ -39,34 +39,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<table class="timetable_sub">
 						<thead>
 							<tr>
-								<th>SL No.</th>
-								<th>Product</th>
-								<th>Quantity</th>
-								<th>Product Name</th>
-
-								<th>Price</th>
+								<th>주문 번호</th>
+								<th>주문 일자</th>
+								<th>금액</th>
+								<th>주문상태</th>
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach var="p" items="${cartlist }" varStatus="status">
+						<c:forEach var="p" items="${orderlist }" varStatus="status">
 							<tr class="rem${status.count }">
-								<td class="invert">${status.count }</td>
-								<td class="invert-image">
-									<a href="pdetail.alc?pid=${p.pid }">
+								<td class="invert"><a href="showorderdetail.alc?oid=${p.oid }">${p.oid } </a></td>
+								<td class="invert">${p.o_date }</td>
+								<%-- <td class="invert-image">
+									<a href="pdetail.alc?pid=${p.o_date }">
 										<img src="images/s1.jpg" alt=" " class="img-responsive">
 									</a>
-								</td>
-								<td class="invert">
-									<div class="quantity">
-										<div class="quantity-select">
-											<div class="entry value">
-												<span>${p.qt }</span>
-											</div>
-										</div>
-									</div>
-								</td>
-								<td class="invert">${p.pname }</td>
-								<td class="invert">${p.price }</td>
+								</td> --%>
+								<td class="invert">${p.amount }</td>
+								<td class="invert">${p.pmt_status }</td>
 							</tr>
 						</c:forEach>
 							
@@ -74,7 +64,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</table>
 				</div>
 				<div class="checkout-left row">
-					<div class="col-md-12 checkout-left-basket">
+					<%-- <div class="col-md-12 checkout-left-basket">
 						<h4>Continue to basket</h4>
 						<ul>
 						<c:forEach var="p" items="${cartlist }" varStatus="status">
@@ -89,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span></span>
 							</li>
 						</ul>
-					</div>
+					</div> --%>
 					<div class="checkout-right-basket">
 						<a href="payment.alc">결제 진행하기 </a>
 					</div>

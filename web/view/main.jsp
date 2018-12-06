@@ -91,7 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<c:otherwise>
 			<ul class="cart-inner-info">
 						<li class="button-log">
-							${login_user.user_id }, welcome
+							${login_user.name }님, 환영합니다.
 							<a class="btn-open" href="logout.alc">
 								<span class="fa fa-user" aria-hidden="true"></span>
 							</a>
@@ -1107,7 +1107,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="mail-grid-text-info">
 								<h3>Genuine Product</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
+								<p>진품인지는 저희도 모릅니다.</p>
 							</div>
 						</div>
 						<div class="col-lg-3 footer-top-w3layouts-grid-sec">
@@ -1116,7 +1116,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="mail-grid-text-info">
 								<h3>Secure Products</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
+								<p>배송중 깨질 수도 있습니다.</p>
 							</div>
 						</div>
 						<div class="col-lg-3 footer-top-w3layouts-grid-sec">
@@ -1125,7 +1125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="mail-grid-text-info">
 								<h3>Cash on Delivery</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
+								<p>사실 현금만 받고 싶습니다.</p>
 							</div>
 						</div>
 						<div class="col-lg-3 footer-top-w3layouts-grid-sec">
@@ -1134,7 +1134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 							<div class="mail-grid-text-info">
 								<h3>Easy Delivery</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur</p>
+								<p>실제 배송을 안하니 이지합니다.</p>
 							</div>
 						</div>
 					</div>
@@ -1153,8 +1153,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<h3>About Us</h3>
 					</div>
 					<div class="footer-text">
-						<p>Curabitur non nulla sit amet nislinit tempus convallis quis ac lectus. lac inia eget consectetur sed, convallis at
-							tellus. Nulla porttitor accumsana tincidunt.</p>
+						<p>멀티캠퍼스 혁신성장 청년인재를 수강중인 수강생들로 이루어진 팀입니다.</p>
 						<ul class="footer-social text-left mt-lg-4 mt-3">
 
 							<li class="mx-2">
@@ -1196,12 +1195,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="contact-info">
 						<h4>Location :</h4>
-						<p>0926k 4th block building, king Avenue, New York City.</p>
+						<p>서울특별시 강남구 역삼동 테헤란로 212</p>
 						<div class="phone">
 							<h4>Contact :</h4>
-							<p>Phone : +121 098 8907 9987</p>
+							<p>Phone : 010 2946 5009</p>
 							<p>Email :
-								<a href="mailto:info@example.com">info@example.com</a>
+								<a href="mailto:ssss@example.com">info@alc.com</a>
 							</p>
 						</div>
 					</div>
@@ -1212,7 +1211,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<ul class="links">
 						<li>
-							<a href="index.html">Home</a>
+							<a href="main.alc">Home</a>
 						</li>
 						<li>
 							<a href="about.html">About</a>
@@ -1228,12 +1227,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</li>
 					</ul>
 				</div>
-				<div class="col-lg-3 footer-grid-w3ls">
+				 <div class="col-lg-3 footer-grid-w3ls">
 					<div class="footer-title">
 						<h3>Sign up for your offers</h3>
 					</div>
 					<div class="footer-text">
-						<p>By subscribing to our mailing list you will always get latest news and updates from us.</p>
+						<p>정기적으로 메일을 받고자 하신다면 아래에 이메일 주소를 입력해주세요</p>
 						<form action="#" method="post">
 							<input class="form-control" type="email" name="Email" placeholder="Enter your email..." required="">
 							<button class="btn1">
@@ -1242,11 +1241,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="clearfix"> </div>
 						</form>
 					</div>
-				</div>
+				</div> 
 			</div>
 			<div class="copyright-w3layouts mt-4">
-				<p class="copy-right text-center ">&copy; 2018 Goggles. All Rights Reserved | Design by
-					<a href="http://w3layouts.com/"> W3layouts </a>
+				<p class="copy-right text-center ">&copy; 2018 ALC. All Rights Reserved | Design by
+					<a href="http://w3layouts.com/"> Multicampus </a>
 				</p>
 			</div>
 		</div>

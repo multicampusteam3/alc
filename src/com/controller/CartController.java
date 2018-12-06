@@ -70,7 +70,7 @@ public class CartController  {
 	public ModelAndView orderconfirm(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		String[] cid = request.getParameterValues("cid");
-		mav.setViewName("shop");
+		mav.setViewName("forward:showorders.alc");
 		for (int i = 0; i < cid.length; i++) {
 			try {
 				biz.remove(cid[i]);
@@ -80,7 +80,7 @@ public class CartController  {
 				e.printStackTrace();
 			}
 		}
-		mav.addObject("center", "order");
 		return mav;
 	}
+	
 }

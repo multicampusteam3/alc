@@ -41,4 +41,22 @@ public class OrderdetailController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping("/showorderdetail.alc")
+	public ModelAndView showorderdetail(HttpServletRequest request) {
+		ModelAndView mav = new ModelAndView();
+		ArrayList<Orderdetail> list = null;
+		mav.setViewName("shop");
+		String oid = request.getParameter("oid");
+		try {
+			list = biz.getsec(oid);
+			mav.addObject("center", "orderdetail");
+			mav.addObject("detaillist", list);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	
 }
