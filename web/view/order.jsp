@@ -2,12 +2,39 @@
     pageEncoding="EUC-KR"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Goggles a Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/login_overlay.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/style6.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/shop.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/checkout.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/easy-responsive-tabs.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/style.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resource/css/fontawesome-all.css">
+	<link href="//fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	    rel="stylesheet">    
+	    
+</head> 
 <section class="banner-bottom-wthreelayouts py-lg-5 py-3">
 		<div class="container">
 			<div class="inner-sec-shop px-lg-4 px-3">
-				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
+				<h3 class="tittle-w3layouts my-lg-4 mt-3">주문 확인 </h3>
 				<div class="checkout-right">
-					<h4>고객님의 장바구니엔 ${fn:length(cartlist) }개의 상품이 담겨 있습니다.
+					<h4>고객님의 주문은 아래와 같습니다.
 					</h4>
 					<table class="timetable_sub">
 						<thead>
@@ -18,7 +45,6 @@
 								<th>Product Name</th>
 
 								<th>Price</th>
-								<th>Remove</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -41,12 +67,6 @@
 								</td>
 								<td class="invert">${p.pname }</td>
 								<td class="invert">${p.price }</td>
-								<td class="invert">
-									<div class="rem">
-										<a href="cartdelete.alc?cid=${p.cid }"><div class="close${status.count }"></div></a> 
-									</div>
-
-								</td>
 							</tr>
 						</c:forEach>
 							

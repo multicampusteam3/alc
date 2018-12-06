@@ -70,15 +70,17 @@ public class CartController  {
 	public ModelAndView orderconfirm(HttpServletRequest request) {
 		ModelAndView mav = new ModelAndView();
 		String[] cid = request.getParameterValues("cid");
-		mav.setViewName("order");
+		mav.setViewName("shop");
 		for (int i = 0; i < cid.length; i++) {
 			try {
 				biz.remove(cid[i]);
+				
 			} catch (Exception e) {
 				System.out.println("삭제실패!");
 				e.printStackTrace();
 			}
 		}
+		mav.addObject("center", "order");
 		return mav;
 	}
 }

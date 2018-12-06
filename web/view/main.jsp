@@ -492,9 +492,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<!--//meddle-->
-				<!--/slide-->
+				
+				<!-- 
+				
+				/slide
 				<div class="slider-img mid-sec">
-					<!--//banner-sec-->
+					//banner-sec
 					<div class="mid-slider">
 						<div class="owl-carousel owl-theme row">
 							<div class="item">
@@ -943,7 +946,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- /testimonials -->
 <!-- 				<div class="testimonials py-lg-4 py-3 mt-4">
 					<div class="testimonials-inner py-lg-4 py-3">
@@ -997,6 +1000,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<!-- //testimonials -->
 				<br>
 				<br>
+				
+				<!-- 
+				
 				<h3 class="tittle-w3layouts my-lg-4 my-4"> 그들의 평가가 궁금하다!? </h3>
 				<a href="#" class="tittle-w3layouts my-lg-4 my-4">+more</a>
 				<hr>
@@ -1047,7 +1053,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</figure>
 					</div>
 				</div>
-				<!-- /grids -->
+				/grids
 				<div class="bottom-sub-grid-content py-lg-5 py-3">
 					<div class="row">
 						<div class="col-lg-4 bottom-sub-grid text-center">
@@ -1062,7 +1068,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 							</p>
 						</div>
-						<!-- /.col-lg-4 -->
+						/.col-lg-4
 						<div class="col-lg-4 bottom-sub-grid text-center">
 							<div class="bt-icon">
 								<span class="fas fa-rocket"></span>
@@ -1074,7 +1080,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 							</p>
 						</div>
-						<!-- /.col-lg-4 -->
+						/.col-lg-4
 						<div class="col-lg-4 bottom-sub-grid text-center">
 							<div class="bt-icon">
 								<span class="far fa-sun"></span>
@@ -1086,9 +1092,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 							</p>
 						</div>
-						<!-- /.col-lg-4 -->
+						/.col-lg-4
 					</div>
 				</div>
+				 -->
+				
 				<!-- //grids -->
 				<!-- /clients-sec -->
 				<div class="testimonials p-lg-5 p-3 mt-4">
