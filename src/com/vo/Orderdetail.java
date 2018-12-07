@@ -10,6 +10,17 @@ public class Orderdetail {
 	
 	public Orderdetail() {}
 	
+	
+	public Orderdetail(int odid, int pid, String pname, int oid, int qt, int price) {
+		this.odid = odid;
+		this.pid = pid;
+		this.pname = pname;
+		this.oid = oid;
+		this.qt = qt;
+		this.price = price;
+	}
+
+
 	public Orderdetail(int odid, int pid, int oid, int qt, int price) {
 		this.odid = odid;
 		this.pid = pid;
@@ -81,10 +92,24 @@ public class Orderdetail {
 		this.price = price;
 	}
 
+	public String getPname() {
+		return pname;
+	}
+
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Orderdetail [odid=" + odid + ", pid=" + pid + ", oid=" + oid + ", qt=" + qt + ", price=" + price + "]";
+		return "Orderdetail [odid=" + odid + ", pid=" + pid + ", pname=" + pname + ", oid=" + oid + ", qt=" + qt
+				+ ", price=" + price + "]";
 	}
+
+
+	
 	
 	
 	

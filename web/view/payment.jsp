@@ -40,7 +40,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-	<div class="banner-top container-fluid" id="home">
+	<%-- <div class="banner-top container-fluid" id="home">
 		<!-- header -->
 		<header>
 			<div class="row">
@@ -321,7 +321,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 
-		</div>
+		</div> --%>
 		<!--//banner -->
 		<!--// header_top -->
 		<!--Payment-->
@@ -546,7 +546,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<!-- //payment -->
 		</section>
 		<!--//Payment-->
-		<!--footer -->
+		<%-- <!--footer -->
 		<footer class="py-lg-5 py-3">
 			<div class="container-fluid px-lg-5 px-3">
 				<div class="row footer-top-w3layouts">
@@ -715,7 +715,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					fit: true
 				});
 			});
-		</script>
+		</script> --%>
 
 		<!-- credit-card -->
 		<script type="text/javascript" src="<c:url value="/resource/js/creditly.js" />">

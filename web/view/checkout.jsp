@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="inner-sec-shop px-lg-4 px-3">
 			<form action="order.alc" method="post">
-				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
+				<h3 class="tittle-w3layouts my-lg-4 mt-3">장바구니 </h3>
 				<div class="checkout-right">
 					<h4>고객님의 장바구니엔 ${fn:length(cartlist) }개의 상품이 담겨 있습니다.
 					</h4>
@@ -59,7 +59,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<input type="hidden" name="pname" value="${p.pname }">
 							<input type="hidden" name="cid" value="${p.cid }">
 							<input type="hidden" name="price" value="${p.price }">
-							<input type="hidden" name="amount" value="15000">
+							
 							<input type="hidden" name="price" value="${p.price }">
 							<input type="hidden" name="qt" value="${p.qt }">
 							<tr class="rem${status.count }">
@@ -72,16 +72,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<td class="invert">
 									<div class="quantity">
 										<div class="quantity-select">
-											<div class="entry value-minus">&nbsp;</div>
+											<div class="entry minus value-minus" id="m_${status.count }">&nbsp;</div>
 											<div class="entry value">
 												<span>${p.qt }</span>
 											</div>
-											<div class="entry value-plus active">&nbsp;</div>
+											<div class="entry plus value-plus active" id="p_${status.count }">&nbsp;</div>
 										</div>
 									</div>
 								</td>
 								<td class="invert">${p.pname }</td>
-								<td class="invert">${p.price }</td>
+								<td class="invert" id="i_${status.count }">${p.price }</td>
 								<td class="invert">
 									<div class="rem">
 										<a href="cartdelete.alc?cid=${p.cid }"><div class="close${status.count }"></div></a> 
@@ -102,16 +102,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<c:forEach var="p" items="${cartlist }" varStatus="status">
 							<li>${p.pname }
 								<i>-</i>
-								<span id="sumprice${status.count }" val="${p.qt * p.price }">${p.qt * p.price } </span>
+								<span class="item" id="a_${status.count }" > ${p.qt*p.price } </span>
 							</li>
 						</c:forEach>
 					
 							<li>합계
 								<i>-</i>
-								<span></span>
+								<span id="total"></span>
+								<input type="hidden" name="amount" id="totalprice" value="">
 							</li>
 						</ul>
 					</div>
+				<c:choose>
+				<c:when test="${fn:length(cartlist) != 0 }">
 					<div class="checkout-right-basket">
 						<!-- <a href="orderdetail.alc">결제 진행하기 </a> -->
  						<button type="submit" class="googles-cart pgoogles-cart">
@@ -120,7 +123,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 			
 					<div class="clearfix"> </div>
-
+				</c:when>
+				<c:otherwise>
+							<div class="checkout-right-basket">
+						<!-- <a href="orderdetail.alc">결제 진행하기 </a> -->
+ 						<button type="button" onclick="location.href='main.alc';" class="googles-cart pgoogles-cart">
+							돌아가기
+						</button>
+					</div>
+			
+					<div class="clearfix"> </div>
+				</c:otherwise>
+				</c:choose>
 				</div>
 			</form>
 			</div>
@@ -154,6 +168,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			open = false;
 		});
 	</script>
+	
+	<script>
+        function total(){
+            var total = 0;
+            $(".item").each(function (){
+                total += parseInt($(this).html(),10);
+            });
+            $('#total').text(total);
+            $('#totalprice').val(total);
+        }
+        
+        $('.value-plus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) + 1,
+                number = $(this).attr('id').substring(2),
+                price = parseInt($('#i_'+ number).html(), 10),
+                amount = price * newVal;
+            divUpd.text(newVal);
+            $('#a_'+number).text(amount);
+            total();
+        });
+
+        $('.value-minus').on('click', function () {
+            var divUpd = $(this).parent().find('.value'),
+                newVal = parseInt(divUpd.text(), 10) - 1;
+            number = $(this).attr('id').substring(2),
+            price = parseInt($('#i_'+ number).html(), 10),
+            amount = price * newVal;
+            if (newVal >= 1) divUpd.text(newVal);
+            $('#a_'+number).text(amount);
+            total();
+        });
+    </script>
+	
 	<!--//checkout-->
 <%-- 	
 		<!--jQuery-->

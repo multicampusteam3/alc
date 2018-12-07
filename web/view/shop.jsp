@@ -87,7 +87,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<input type="hidden" name="cmd" value="_cart">
 								<input type="hidden" name="display" value="1">
 								<button class="top_googles_cart" type="submit" name="submit" value="">
-									My Cart
+									장바구니
+									<i class="fas fa-cart-arrow-down"></i>
+								</button>
+							</form>
+							<form action="showorders.alc" method="post" class="last">
+								<!-- <input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="display" value="1"> -->
+								<button class="top_googles_cart" type="submit" name="submit" value="">
+									주문내역
 									<i class="fas fa-cart-arrow-down"></i>
 								</button>
 							</form>
@@ -920,7 +928,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		});
 	</script>
 	<!--quantity-->
-	<script>
+<!-- 	<script>
 		$('.value-plus').on('click', function () {
 			var divUpd = $(this).parent().find('.value'),
 				newVal = parseInt(divUpd.text(), 10) + 1;
@@ -932,7 +940,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				newVal = parseInt(divUpd.text(), 10) - 1;
 			if (newVal >= 1) divUpd.text(newVal);
 		});
-	</script>
+	</script> -->
 	<!--quantity-->
 	<!--close-->
 	<script>

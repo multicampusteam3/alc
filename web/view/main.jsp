@@ -101,9 +101,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<!-- <input type="hidden" name="cmd" value="_cart">
 								<input type="hidden" name="display" value="1"> -->
 								<button class="top_googles_cart" type="submit" name="submit" value="">
-									My Cart
+									장바구니
 									<i class="fas fa-cart-arrow-down"></i>
 								</button>
+								
+							</form>
+							<form action="showorders.alc" method="post" class="last">
+								<!-- <input type="hidden" name="cmd" value="_cart">
+								<input type="hidden" name="display" value="1"> -->
+								<button class="top_googles_cart" type="submit" name="submit" value="">
+									주문내역
+									<i class="fas fa-cart-arrow-down"></i>
+								</button>
+								
 							</form>
 						</li>
 					</ul>
@@ -485,7 +495,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-12 middle-slider my-4">
 						<div class="middle-text-info ">
 
-							<h3 class="tittle-w3layouts two text-center my-lg-4 mt-3">Summer Flash sale</h3>
+							<h3 class="tittle-w3layouts two text-center my-lg-4 mt-3">Winter Flash sale</h3>
 							<div class="simply-countdown-custom" id="simply-countdown-custom"></div>
 
 						</div>

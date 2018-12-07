@@ -11,7 +11,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM PRODUCT WHERE P_CODE=#{obj}
 	</select>
 	<select id="selectall" resultType="product">
-		SELECT * FROM PRODUCT
+		SELECT * FROM PRODUCT WHERE ROWNUM <![CDATA[<=]]>12 ORDER BY REGDATE 
 	</select>
 	<insert id="insert" parameterType="product">
 		INSERT INTO PRODUCT VALUES (PRO_SEQ.NEXTVAL,#{pname},#{p_code},#{unit_price},sysdate,#{inventory},#{p_imgname})

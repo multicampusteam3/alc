@@ -35,9 +35,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="inner-sec-shop px-lg-4 px-3">
 			<form action="order.alc" method="post">
-				<h3 class="tittle-w3layouts my-lg-4 mt-3">Checkout </h3>
+				<h3 class="tittle-w3layouts my-lg-4 mt-3">주문 상세 </h3>
 				<div class="checkout-right">
-					<h4>고객님의 장바구니엔 ${fn:length(cartlist) }개의 상품이 담겨 있습니다.
+					<h4>본 주문에는 ${fn:length(detaillist) }개의 상품이 포함되어 있습니다.
 					</h4>
 					<table class="timetable_sub">
 						<thead>
@@ -48,22 +48,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<th>Product Name</th>
 
 								<th>Price</th>
-								<th>Remove</th>
 							</tr>
 						</thead>
 					
 						<tbody>
 						
-						<c:forEach var="p" items="${cartlist }" varStatus="status">
+						<c:forEach var="p" items="${detaillist }" varStatus="status">
+						
+							<input type="hidden" name="oid" value="${p.oid }">
 							<input type="hidden" name="pid" value="${p.pid }">
 							<input type="hidden" name="pname" value="${p.pname }">
-							<input type="hidden" name="cid" value="${p.cid }">
-							<input type="hidden" name="price" value="${p.price }">
 							<input type="hidden" name="amount" value="15000">
 							<input type="hidden" name="price" value="${p.price }">
 							<input type="hidden" name="qt" value="${p.qt }">
 							<tr class="rem${status.count }">
-								<td class="invert">${status.count }</td>
+								<td class="invert">${p.odid }</td>
 								<td class="invert-image">
 									<a href="pdetail.alc?pid=${p.pid }">
 										<img src="resource/images/alcimgs/soju_hite.jpg" alt=" " class="img-responsive">
@@ -72,22 +71,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<td class="invert">
 									<div class="quantity">
 										<div class="quantity-select">
-											<div class="entry value-minus">&nbsp;</div>
 											<div class="entry value">
 												<span>${p.qt }</span>
 											</div>
-											<div class="entry value-plus active">&nbsp;</div>
 										</div>
 									</div>
 								</td>
 								<td class="invert">${p.pname }</td>
-								<td class="invert">${p.price }</td>
-								<td class="invert">
-									<div class="rem">
-										<a href="cartdelete.alc?cid=${p.cid }"><div class="close${status.count }"></div></a> 
-									</div>
-
-								</td>
+								<td class="invert">${p.qt * p.price }</td>
 							</tr>
 						</c:forEach>
 							
@@ -96,7 +87,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<input type="hidden" name="user_id" value="${login_user.user_id }">
 				</div>
 				<div class="checkout-left row">
-					<div class="col-md-12 checkout-left-basket">
+					<%-- <div class="col-md-12 checkout-left-basket">
 						<h4>Continue to basket</h4>
 						<ul>
 						<c:forEach var="p" items="${cartlist }" varStatus="status">
@@ -111,12 +102,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<span></span>
 							</li>
 						</ul>
-					</div>
+					</div> --%>
 					<div class="checkout-right-basket">
-						<a href="orderdetail.alc">결제 진행하기 </a>
-						<button type="submit" class="googles-cart pgoogles-cart">
-							결제 진행
-						</button>
+						<a href="showorders.alc">돌아가기 </a>
 					</div>
 			
 					<div class="clearfix"> </div>

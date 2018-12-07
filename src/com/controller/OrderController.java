@@ -51,5 +51,13 @@ public class OrderController {
 		return mav;
 	}
 	
+	@RequestMapping("/payment.alc")
+	public ModelAndView payment() {
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("shop");
+		mav.addObject("center", "payment");
+		return mav;
+	}
 	
 }
