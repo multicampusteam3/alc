@@ -164,14 +164,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Password</label>
-										<input type="password" class="form-control" id="regpw" name="pw" placeholder="" required="">
+										<input type="password" class="form-control" id="regPw" name="pw" placeholder="" required="" value="">
 										<small id="passwordHelp" class="form-text text-muted">8자리 이상 비밀번호를 입력해 주세요.</small>
 
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Password Check</label>
-										<input type="password" class="form-control" id="exampleInputPassword2" name="pw_check" onkeyup="checkpwd()" placeholder="" required="">
-										<small id="passwordHelp" class="form-text text-muted">동일한 암호를 입력하세요.</small>
+										<input type="password" class="form-control" id="regPwCheck" name="pw_check" oninput="checkPwd()" placeholder="" required="">
+										<small id="passwordCheckHelp" class="form-text ">동일한 암호를 입력하세요.</small>
 									</div>
 									<div class="form-group">
 										<label class="mb-2">Name</label>
@@ -195,6 +195,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<!--// Login/SignUp-->
 				</div>
+				<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+	
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+		 function checkPwd(){
+			  /* var f1 = document.forms[0]; */
+			  var pw1 = $('#regPw').val();
+			  var pw2 = $('#regPwCheck').val();
+			  if(pw1 != pw2){
+			   $('#passwordCheckHelp').css("color","red");
+			   $('#passwordCheckHelp').text("동일한 암호를 입력하세요."); 
+			  }else{
+			   $('#passwordCheckHelp').css("color","green");
+			   $('#passwordCheckHelp').text("암호가 확인 되었습니다."); 
+			  }
+		 };
+
+	</script>
 			</div>
 			<div class="search">
 				<div class="mobile-nav-button">
@@ -1265,28 +1287,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />"> </script>
 	<!-- newsletter modal -->
 	<!-- Modal -->
-	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body text-center p-5 mx-auto mw-100">
-					<h6>Are You Ready To Drink? </h6>
+					<h6>Are You Ready To Drink?</h6>
 					<br>
 					<h3>당신의 우리와 즐길 준비가 되어있습니까?</h3>
 					<div class="login newsletter">
 						<form action="#" method="post">
 							<div class="form-group">
-								<label class="mb-2">나이</label>
-								<input type="text" class="form-control welcom" id="exampleInputAge" aria-describedby="ageHelp" placeholder="" required="">
+								<label class="mb-2">나이</label> <input type="text"
+									class="form-control welcom" id="exampleInputAge"
+									aria-describedby="ageHelp" placeholder="" required="">
 								<label class="mb-2">세</label>
 							</div>
-							<button type="submit" class="btn btn-primary submit mb-4">입장하기</button>
+							<button type="submit" class="btn btn-primary submit mb-4" id="JoinButton">입장하기</button>
 						</form>
 
 					</div>
@@ -1296,8 +1321,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			$("#myModal").modal();
+			$('#JoinButton').click(function(){
+				var age = parseInt($('#exampleInputAge').val(), 10);
+				if( age > 19){
+					alert("입장가능!!");
+					$("#myModal").attr('aria-hidden', true);
+				};
+			});
+			
 		});
 	</script>
 	<!-- // modal -->

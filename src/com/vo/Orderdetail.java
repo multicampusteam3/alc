@@ -7,10 +7,22 @@ public class Orderdetail {
 	int oid;
 	int qt;
 	int price;
+	String p_imgname;
 	
 	public Orderdetail() {}
 	
 	
+	public Orderdetail(int odid, int pid, String pname, int oid, int qt, int price, String p_imgname) {
+		this.odid = odid;
+		this.pid = pid;
+		this.pname = pname;
+		this.oid = oid;
+		this.qt = qt;
+		this.price = price;
+		this.p_imgname = p_imgname;
+	}
+
+
 	public Orderdetail(int odid, int pid, String pname, int oid, int qt, int price) {
 		this.odid = odid;
 		this.pid = pid;
@@ -100,14 +112,26 @@ public class Orderdetail {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
+	
+
+	public String getP_imgname() {
+		return p_imgname;
+	}
+
+
+	public void setP_imgname(String p_imgname) {
+		this.p_imgname = p_imgname;
+	}
 
 
 	@Override
 	public String toString() {
 		return "Orderdetail [odid=" + odid + ", pid=" + pid + ", pname=" + pname + ", oid=" + oid + ", qt=" + qt
-				+ ", price=" + price + "]";
+				+ ", price=" + price + ", p_imgname=" + p_imgname + "]";
 	}
 
+
+	
 
 	
 	

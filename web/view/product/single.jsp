@@ -61,6 +61,8 @@
 									</form>
 									
 									<form action="order.alc" method="post">
+										<div class="occasion-cart">
+												<div class="googles single-item singlepage">
 													<input type="hidden" name="qt" value="1">
 													<input type="hidden" name="user_id" value="${login_user.user_id }">
 													<input type="hidden" name="pid" value="${prd.pid }">
@@ -69,6 +71,8 @@
 													<button type="submit" class="googles-cart pgoogles-cart">
 														바로구매하기
 													</button>
+												</div>
+										</div>
 									</form>
 									
 								</div>

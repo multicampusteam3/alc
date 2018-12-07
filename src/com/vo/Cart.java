@@ -10,9 +10,23 @@ public class Cart {
 	int price;
 	int cid;
 	Date c_date;
+	String p_imgname;
 	
 	public Cart() {}
 	
+	
+	public Cart(String user_id, int pid, String pname, int qt, int price, int cid, Date c_date, String p_imgname) {
+		this.user_id = user_id;
+		this.pid = pid;
+		this.pname = pname;
+		this.qt = qt;
+		this.price = price;
+		this.cid = cid;
+		this.c_date = c_date;
+		this.p_imgname = p_imgname;
+	}
+
+
 	public Cart(String user_id, int pid, String pname, int qt, int price) {
 		this.user_id = user_id;
 		this.pid = pid;
@@ -87,12 +101,26 @@ public class Cart {
 	public void setPname(String pname) {
 		this.pname = pname;
 	}
+	
+	
+	public String getP_imgname() {
+		return p_imgname;
+	}
+
+
+	public void setP_imgname(String p_imgname) {
+		this.p_imgname = p_imgname;
+	}
+
 
 	@Override
 	public String toString() {
 		return "Cart [user_id=" + user_id + ", pid=" + pid + ", pname=" + pname + ", qt=" + qt + ", price=" + price
-				+ ", cid=" + cid + ", c_date=" + c_date + "]";
+				+ ", cid=" + cid + ", c_date=" + c_date + ", p_imgname=" + p_imgname + "]";
 	}
+
+
+	
 
 	
 	

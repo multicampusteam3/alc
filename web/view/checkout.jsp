@@ -66,7 +66,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<td class="invert">${status.count }</td>
 								<td class="invert-image">
 									<a href="pdetail.alc?pid=${p.pid }">
-										<img src="resource/images/alcimgs/soju_hite.jpg" alt=" " class="img-responsive">
+										<img src="resource/images/alcimgs/${p.p_imgname }" alt=" " class="img-responsive">
 									</a>
 								</td>
 								<td class="invert">
