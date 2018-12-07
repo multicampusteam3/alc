@@ -113,8 +113,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						</ul>
 					</div>
 					<div class="checkout-right-basket">
-						<a href="orderdetail.alc">결제 진행하기 </a>
-						<button type="submit" class="googles-cart pgoogles-cart">
+						<!-- <a href="orderdetail.alc">결제 진행하기 </a> -->
+ 						<button type="submit" class="googles-cart pgoogles-cart">
 							결제 진행
 						</button>
 					</div>

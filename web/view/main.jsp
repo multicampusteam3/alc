@@ -413,13 +413,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="carousel-inner" role="listbox">
 					<div class="carousel-item active">
 						<div class="carousel-caption text-center">
-							<h3>여기에 문구를 작성하세요
-								<span>sale 30% off</span>
+							<h3>주류  판매법을  당당히  &nbsp;&nbsp;&nbsp;위반하는 사이트
+								<span>아무튼 판매중</span>
 							</h3>
-							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+							<a href="shop.alc?sec=bg_soju" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 						</div>
 					</div>
-					<div class="carousel-item item2">
+					<!-- <div class="carousel-item item2">
 						<div class="carousel-caption text-center">
 							<h3>Women’s eyewear
 								<span>Want to Look Your Best?</span>
@@ -427,22 +427,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 
 						</div>
-					</div>
+					</div> -->
 					<div class="carousel-item item3">
 						<div class="carousel-caption text-center">
-							<h3>Men’s eyewear
-								<span>Cool summer sale 50% off</span>
+							<h3>와인 한잔?
+								<span>와인은 사실 잘 모릅니다.</span>
 							</h3>
-							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+							<a href="shop.alc?sec=bg_wine" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 
 						</div>
 					</div>
 					<div class="carousel-item item4">
 						<div class="carousel-caption text-center">
-							<h3>Women’s eyewear
-								<span>Want to Look Your Best?</span>
+							<h3>맥주를 마시고 싶습니다.
+								<span>마시죠</span>
 							</h3>
-							<a href="shop.html" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
+							<a href="shop.alc?sec=bg_beerl" class="btn btn-sm animated-button gibson-three mt-4">Shop Now</a>
 						</div>
 					</div>
 				</div>
@@ -1264,19 +1264,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				<div class="modal-body text-center p-5 mx-auto mw-100">
-					<h6>Join our newsletter and get</h6>
-					<h3>50% Off for your first Pair of Eye wear</h3>
+				 <div class="modal-body text-center p-5 mx-auto mw-100">
+					<h6>본 사이트는 미성년자 이용이 불가합니다.</h6>
+					<h3>당신은 19세 이상입니까?</h3>
 					<div class="login newsletter">
 						<form action="#" method="post">
 							<div class="form-group">
 								<label class="mb-2">Email address</label>
 								<input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="" required="">
 							</div>
-							<button type="submit" class="btn btn-primary submit mb-4">Get 50% Off</button>
+							<button type="submit" class="btn btn-primary submit mb-4">예</button>
 						</form>
 						<p class="text-center">
-							<a href="#">No thanks I want to pay full Price</a>
+							<a href="redirect:www.naver.com">아니오</a>
 						</p>
 					</div>
 				</div>
@@ -1284,11 +1284,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 		</div>
 	</div>
+<!-- 	
 	<script>
 		$(document).ready(function () {
 			$("#myModal").modal();
 		});
 	</script>
+	 -->
 	<!-- // modal -->
 
 	<!--search jQuery-->
