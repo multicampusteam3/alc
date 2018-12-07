@@ -1255,7 +1255,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<script src="<c:url value="/resource/js/jquery-2.2.3.min.js" />"> </script>
 	<!-- newsletter modal -->
 	<!-- Modal -->
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"> 
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -1264,33 +1265,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
-				 <div class="modal-body text-center p-5 mx-auto mw-100">
-					<h6>본 사이트는 미성년자 이용이 불가합니다.</h6>
-					<h3>당신은 19세 이상입니까?</h3>
+				<div class="modal-body text-center p-5 mx-auto mw-100">
+					<h6>Are You Ready To Drink? </h6>
+					<br>
+					<h3>당신의 우리와 즐길 준비가 되어있습니까?</h3>
 					<div class="login newsletter">
 						<form action="#" method="post">
 							<div class="form-group">
-								<label class="mb-2">Email address</label>
-								<input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="" required="">
+								<label class="mb-2">나이</label>
+								<input type="text" class="form-control welcom" id="exampleInputAge" aria-describedby="ageHelp" placeholder="" required="">
+								<label class="mb-2">세</label>
 							</div>
-							<button type="submit" class="btn btn-primary submit mb-4">예</button>
+							<button type="submit" class="btn btn-primary submit mb-4">입장하기</button>
 						</form>
-						<p class="text-center">
-							<a href="redirect:www.naver.com">아니오</a>
-						</p>
+
 					</div>
 				</div>
 
 			</div>
 		</div>
 	</div>
-<!-- 	
 	<script>
 		$(document).ready(function () {
 			$("#myModal").modal();
 		});
 	</script>
-	 -->
 	<!-- // modal -->
 
 	<!--search jQuery-->
