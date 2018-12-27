@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ExpenseMapper">
+	
+	<select id="select" parameterType="String" resultType="expense">
+		SELECT * FROM EXPENSE WHERE REGDATE = #{obj}
+	</select>
+	<select id="selectsec" parameterType="String" resultType="expense">
+		SELECT * FROM EXPENSE WHERE REGDATE=#{obj}
+	</select>
+	<select id="selectall" resultType="expense">
+		SELECT * FROM EXPENSE  
+	</select>
+	<insert id="insert" parameterType="expense">
+		INSERT INTO EXPENSE VALUES (SYSDATE, to_char(sysdate,'hh24:mi'), #{pmtamount}, #{pmtdetail}, '카드', #{types}, #{lat}, #{lng})
+	</insert>
+	<update id="update" parameterType="expense">
+		UPDATE ORDERS SET PMT_STATUS=#{pmt_status},DELI_STATUS=#{deli_status} WHERE OID=#{cid}
+	</update>
+	<delete id="delete" parameterType="String">
+		DELETE FROM ORDERS WHERE OID=#{obj}
+	</delete>
+	
+</mapper>
+
+
+
+
+
+
